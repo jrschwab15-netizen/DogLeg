@@ -43,3 +43,5 @@ Responsive UI audit and verification: see docs/UI-AUDIT.md. Run npm run ui:fixtu
 Focused Home and Yardage Book details: docs/YARDAGE-BOOK.md. Source: src/journey.js; map imagery requires internet access.
 
 Course-data import and automatic tee/scorecard filling: docs/COURSE-DATA.md.
+
+Annual Yardage Book statistics and research: docs/ANNUAL-YARDAGE-BOOK.md. Implementation: src/season.js.
