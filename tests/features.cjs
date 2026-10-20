@@ -41,3 +41,11 @@ assert.equal(vm.runInContext("newMilestones(seasonSummary(previewRounds,20,'2026
 context.icons={Home:'',Rounds:'',Passport:'',Friends:'',Profile:''};context.tab='Friends';context.icon=()=>'<svg></svg>';
 const nav=context.navigationItems();assert(nav.includes('desktop-friends'));assert(nav.includes('contains-friends'));assert.equal((nav.match(/aria-current="page"/g)||[]).length,1);
 console.log('Passed feature syntax, scorecard parsing, query escaping, nearby radius, distance, location unavailable/denied, and upload validation checks.');
+
+context.lookupRecords=[{course:'Pine Valley',date:'2026-01-01',tees:'White',holes:18,rating:71,slope:120},{course:'Pine Valley',date:'2026-10-01',tees:'Blue',holes:18,rating:73,slope:130},{course:'Pine Demo',date:'2026-10-02',sample:true}];
+const matches=vm.runInContext("savedCourseMatches(lookupRecords,'pine')",context);assert.equal(matches.length,1);assert.equal(matches[0].tees,'Blue');assert.equal(matches[0].slope,130);assert.equal(vm.runInContext("savedCourseMatches(lookupRecords,'missing').length",context),0);
+assert(html.includes('oninput="queueRoundCourses(this.value)"'));
+
+context.state={rounds:context.lookupRecords};context.drawHoles=()=>{};const fields=Object.fromEntries(['course','holes','tees','rating','slope','score','notes'].map(k=>[k,{value:k==='holes'?'18':k==='score'?'84':'keep'}]));const originalQuery=context.document.querySelector;context.document.querySelector=s=>s==='#round-form'?{querySelector:s=>fields[s.match(/name=([^\]]+)/)[1]]}:originalQuery(s);
+context.fillRoundCourse({name:'Pine Valley',holes:'18'});assert.equal(fields.tees.value,'Blue');assert.equal(fields.rating.value,73);assert.equal(fields.score.value,'84');assert.equal(fields.notes.value,'keep');
+context.fillRoundCourse({name:'New Course',holes:'18'});assert.equal(fields.rating.value,'');assert.equal(fields.slope.value,'');assert.equal(fields.score.value,'84');

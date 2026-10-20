@@ -18,3 +18,5 @@ Primary domain: https://doglegclub.com/. GoDaddy apex/www DNS points to GitHub P
 
 V6 source was unavailable. V7 was reconstructed from approved requirements and the recovered original photograph.
 
+
+Latest revision: removed the brown frame in favor of a light blue-green canvas, white navigation, teal actions and clearer text contrast. Home copy is more direct. Round entry now searches Photon while typing a course name, offers prior real courses first, and fills previous tees/rating/slope for an exact saved-course match. Directory selections fill available name/holes and display location; unknown tee ratings are left empty for scorecard confirmation. Existing score/date/notes remain in the form.
