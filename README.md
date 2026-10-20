@@ -33,4 +33,5 @@ Add/open this folder as a local project in Codex. Ask it to read AGENTS.md and P
 
 ## Deployment status
 
-GitHub push and Supabase integration are pending. No remote is configured. For static hosting, deploy dist/ or serve the root index.html. The current app stores records locally; hosting alone will not synchronize records between devices.
+Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://jrschwab15-netizen.github.io/DogLeg/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. The current app stores records locally; hosting alone does not synchronize records between devices. The existing Supabase DogLeg project is not connected: Supabase is a backend service, not static website hosting. No schema, authentication, or cloud persistence has been deployed.
+
