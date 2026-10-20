@@ -34,3 +34,6 @@ Not verified: physical iOS/Android devices, Safari/Firefox, screen-reader operat
 - Earlier Overpass global search timed out and was replaced with Photon; the shipped app uses Photon for both worldwide search and nearby discovery.
 
 2026-10-20 account-course logo repair: all 12 test suites passed. Added geo-scoped Country Club Ohio identity, Nashawtuc provider-ID identity, own-post-only legacy identity recovery, and Friends badge render coverage. Synthetic course-hub preview supports --logos with fake scores/posts and public club coordinates, without real journal contents. Local IAB preview failed with connection timeout on port 4177; do not claim local screenshot verification for this change.
+
+
+Mobile round-entry release: full-width native date field; Holes + Total strokes paired; Tees on its own row; compact viewport-bounded sheet; sticky header and Save actions. Local HTTP browser checks at 390×700 and 320×568 found no document/dialog horizontal overflow and visible Save actions. Full existing Node test chain passes. Physical iOS Safari remains unverified. This release excludes the staged membership/admin/backend changes.
