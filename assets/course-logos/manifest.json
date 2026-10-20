@@ -283,5 +283,36 @@
     "source": "https://www.carnoustiegolflinks.com/",
     "asset": "https://www.carnoustiegolflinks.com/wp-content/uploads/2025/09/Carnoustie-Golf-Links-2025-Logo-e1758897910369.png",
     "verified": "2026-10-20"
+  },
+  {
+    "names": [
+      "The Country Club",
+      "The Country Club Pepper Pike",
+      "The Country Club Ohio"
+    ],
+    "lat": 41.4859307,
+    "lon": -81.4551906,
+    "file": "country-club-ohio.svg",
+    "source": "https://www.thecountryclub.com/",
+    "asset": "https://www.thecountryclub.com/custom/design/images/logo-emblem.svg",
+    "verified": "2026-10-20",
+    "dark": true,
+    "requireLocation": true
+  },
+  {
+    "names": [
+      "Nashawtuc Country Club",
+      "Nashawtuc"
+    ],
+    "lat": 42.4141348,
+    "lon": -71.3682627,
+    "file": "nashawtuc.png",
+    "source": "https://www.nashawtuc.com/",
+    "asset": "https://www.nashawtuc.com/custom/design/images/logo-mobile.png",
+    "verified": "2026-10-20",
+    "compact": true,
+    "ids": [
+      "380cb273-b192-45d2-9180-22188b3b0608"
+    ]
   }
 ]

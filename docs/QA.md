@@ -32,3 +32,5 @@ Not verified: physical iOS/Android devices, Safari/Firefox, screen-reader operat
 - Existing core browser regression suite passed after feature integration. No JavaScript page errors were reported in the online workflow suite.
 - Real device GPS accuracy, browser camera capture, handwriting recognition, arbitrary multi-player table interpretation, and completeness of the worldwide course directory are not verified. Screenshot upload is supported; the app does not directly capture another app's screen.
 - Earlier Overpass global search timed out and was replaced with Photon; the shipped app uses Photon for both worldwide search and nearby discovery.
+
+2026-10-20 account-course logo repair: all 12 test suites passed. Added geo-scoped Country Club Ohio identity, Nashawtuc provider-ID identity, own-post-only legacy identity recovery, and Friends badge render coverage. Synthetic course-hub preview supports --logos with fake scores/posts and public club coordinates, without real journal contents. Local IAB preview failed with connection timeout on port 4177; do not claim local screenshot verification for this change.
