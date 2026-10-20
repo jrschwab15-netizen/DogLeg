@@ -1,0 +1,7 @@
+Dogleg Sunset D logo
+Generated using the built-in image-generation tool.
+Transparent PNG; original artwork, not an editable vector.
+
+Prompt: One original heritage golf-club logo symbol: a large serif capital D in mahogany enclosing a muted gold setting sun above a deep forest-green putting green and a small cream flag. Warm early-1900s painted-sign character, few clear shapes, restrained mahogany/gold/green/ivory palette, transparent background, no wordmark or mockup.
+
+The standalone HTML embeds this PNG in its header, set on an ivory tile for contrast against the mahogany navigation bar. The user's sunset hero photograph is unchanged.

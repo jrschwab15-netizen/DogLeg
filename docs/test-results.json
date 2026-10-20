@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "all five tabs at 390px without horizontal overflow",
+    "round creation and editing",
+    "9-hole scorecard automatic totals",
+    "reload persistence",
+    "sample rounds and handicap estimate",
+    "yearbook memory",
+    "demo invitation and shared round",
+    "challenge progress",
+    "profile update persistence",
+    "backup content generation and import merge without duplicates; OS download blocked by environment",
+    "backup validation",
+    "no browser JavaScript errors"
+  ],
+  "browser": "Chrome headless",
+  "screenshots": "Screenshots show explicitly added sample rounds and test local activity."
+}

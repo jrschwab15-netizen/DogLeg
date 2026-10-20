@@ -1,0 +1,14 @@
+{
+  "name": "dogleg",
+  "version": "7.0.0",
+  "private": true,
+  "description": "A warm country-club golf journal",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node scripts/build.cjs && node tests/features.cjs",
+    "start": "node scripts/serve.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

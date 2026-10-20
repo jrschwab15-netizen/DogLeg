@@ -1,0 +1,9 @@
+{
+  "liveClubSearch": true,
+  "liveNearbyWithSimulatedLocation": true,
+  "nearbyStatus": "12 clubs found. Choose one to start a round.",
+  "liveOCR": true,
+  "searchStatus": "3 clubs found. Choose one to start a round.",
+  "deterministicClubSelection": true,
+  "noJavaScriptErrors": true
+}

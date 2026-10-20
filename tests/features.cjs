@@ -1,0 +1,18 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const elements=new Map();const element=()=>({textContent:'',value:'',hidden:false,disabled:false,className:'',setAttribute(){},append(){},addEventListener(){}});
+const context={console,document:{createElement:element,head:element(),body:element(),querySelector:s=>{if(!elements.has(s))elements.set(s,element());return elements.get(s)},querySelectorAll:()=>[]},window:{},modal:element(),openModal(){},navigator:{},URL,URLSearchParams,AbortSignal,Math,Date,Map,Set,Number,Promise,setTimeout,clearTimeout,toast(){},roundForm(){},noteForm(){},esc:s=>String(s).replaceAll('<','&lt;')};
+vm.createContext(context);vm.runInContext(fs.readFileSync('src/features.js','utf8'),context);
+assert.equal(vm.runInContext("parseScorecard('Total score: 84').total",context),84);
+assert.equal(vm.runInContext("parseScorecard('PAR 4 4 3 5 4 4 3 5 4').scores",context),null);
+assert.equal(vm.runInContext("parseScorecard('Scores: 4 4 3 5 4 4 3 5 4').scores.length",context),9);
+assert.equal(vm.runInContext("parseScorecard('Scores: 4 4 0 5 4 4 3 5 4').scores",context),null);
+assert.equal(vm.runInContext("parseScorecard('Total score 999').total",context),null);
+assert(vm.runInContext("clubQuery('St. Andrews')",context).includes('St\\\\. Andrews'));
+assert(vm.runInContext("clubQuery('',{lat:40.12,lon:-73.22})",context).includes('(around:30000,40.12,-73.22)'));
+assert(vm.runInContext("distance({lat:40,lon:-73},{lat:40,lon:-73})",context)===0);
+context.nearbyClubs();assert(elements.get('#club-status').textContent.includes('unavailable'));
+context.navigator.geolocation={getCurrentPosition:(success,error)=>error({code:1})};context.nearbyClubs();assert(elements.get('#club-status').textContent.includes('declined'));
+context.pickScorecard({type:'application/pdf',size:500});assert(elements.get('#scan-status').textContent.includes('PNG'));
+context.pickScorecard({type:'image/png',size:16000000});assert(elements.get('#scan-status').textContent.includes('15 MB'));
+const html=fs.readFileSync('index.html','utf8');new vm.Script(html.match(/<script>([\s\S]*)<\/script>/)[1]);
+console.log('Passed feature syntax, scorecard parsing, query escaping, nearby radius, distance, location unavailable/denied, and upload validation checks.');
