@@ -17,7 +17,8 @@ Open http://127.0.0.1:4173 after starting the server. Create an account or log i
 ## Files
 
 - src/template.html — application layout, styling, local data, and core flows.
-- src/features.js — Add menu, club search, nearby location, scorecard OCR.
+- src/features.js — Add menu, club search, nearby location, scorecard OCR and accounts.
+- src/round-social.js — Courses tab, round photos and accepted-friends feed.
 - assets/ — original sunset photograph and approved logo.
 - scripts/ — portable build and preview server.
 - tests/features.cjs — syntax and feature logic checks.
@@ -33,5 +34,5 @@ Add/open this folder as a local project in Codex. Ask it to read AGENTS.md and P
 
 ## Deployment status
 
-Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://doglegclub.com/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. Supabase DogLeg (ngayytqdpltqauqmtbgo) stores private authenticated journals. Use the dedicated account screens to create an account or log in. Signup is immediate, without confirmation email, and sessions are remembered on this device. Import the original browser journal or a V7 backup to move existing records into your account. Changes save automatically with conflict protection. Friends remains a demo. See docs/CLOUD.md for accounts, docs/DOMAIN.md for hosting, and docs/FLIGHTY-REVIEW.md for the latest design.
+Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://doglegclub.com/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. Supabase DogLeg (ngayytqdpltqauqmtbgo) stores private authenticated journals. Use the dedicated account screens to create an account or log in. Signup is immediate, without confirmation email, and sessions are remembered on this device. Import the original browser journal or a V7 backup to move existing records into your account. Changes save automatically with conflict protection. Friends now supports explicit accepted connections and opt-in round/photo posts. See docs/COURSES-PHOTOS.md for privacy, limits and verification. See docs/CLOUD.md for accounts, docs/DOMAIN.md for hosting, and docs/FLIGHTY-REVIEW.md for the latest design.
 

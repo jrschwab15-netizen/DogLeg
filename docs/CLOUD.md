@@ -15,7 +15,7 @@ Signed-in edits are cached by account and automatically saved to Supabase after 
 
 Each update checks the previous revision atomically. A stale device cannot overwrite a newer cloud revision. If a conflict appears, export a V7 backup before loading the latest cloud journal, then import the backup to merge missing records. Records with matching IDs keep the cloud version. Unsaved local edits/deletions to an existing ID need manual reconciliation from the exported backup. The pre-reload device snapshot is also retained in the account's local-storage key with :before-reload appended.
 
-Signed-out edits remain local. Continue without an account preserves the browser journal and remembers local mode. Log out returns to the login screen; account caches remain available on the device. Use trusted devices and log out when finished. This implementation does not add multiplayer Friends.
+Signed-out edits remain local. Continue without an account preserves the browser journal and remembers local mode. Log out returns to the login screen; account caches remain available on the device. Use trusted devices and log out when finished. Accepted-friends connections and explicitly posted round snapshots are now stored separately from private journals. See COURSES-PHOTOS.md for audience rules and verification limits.
 
 The Supabase Site URL is now https://doglegclub.com/, and that exact redirect is allowed. The previous GitHub Pages redirect remains allowed for compatibility. Custom SMTP remains unconfigured. Signup does not send confirmation email. Password-recovery handling is present for future email-service configuration, but the login screen does not offer email resets while there is no public sender configured.
 

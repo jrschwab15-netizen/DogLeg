@@ -1,5 +1,7 @@
 # Current state
 
+Current release: dedicated Courses tab, compressed round-photo attachments, and intentionally implemented accepted-friends requests/feed in Supabase. This supersedes historical Friends-demo notes below. Posting is off by default; private journals remain owner-only. Mobile puts Passport inside Courses to keep five navigation controls. See docs/COURSES-PHOTOS.md for testing and size limits.
+
 Dogleg V7 is a complete browser-local prototype. Latest approved design: welcoming country-club locker room with mahogany, brass, cream, green painted honours boards, original course sunset hero, and a generated Sunset D logo.
 
 Implemented: Home, Rounds, centered Add, Passport, and Profile navigation; Friends combined under Profile; local profile; annual round goal; 9/18-hole entry; hole totals; draft/edit/delete/search; statistics; unofficial handicap trend; course passport; yearbook; fictional Friends list/activity/leaderboard/invites/shared plans/challenges; backup export/import; Add menu integrated into the bottom navigation bar; worldwide Photon club search; optional nearby location; local Tesseract screenshot/photo OCR with review before saving.

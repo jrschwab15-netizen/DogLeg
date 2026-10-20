@@ -1,0 +1,32 @@
+begin;
+insert into auth.users(id) values ('11111111-1111-4111-8111-111111111111'),('22222222-2222-4222-8222-222222222222'),('33333333-3333-4333-8333-333333333333');
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}',true);
+insert into public.dogleg_round_posts(user_id,round_id,payload) values ('11111111-1111-4111-8111-111111111111','aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','{"name":"Test A","course":"Test Course","date":"2026-10-19","score":84,"holes":18,"tees":"White","notes":"Privacy test","photos":["data:image/jpeg;base64,/9j/"]}');
+insert into public.dogleg_connections(requester,recipient,requester_name) values ('11111111-1111-4111-8111-111111111111','22222222-2222-4222-8222-222222222222','Test A');
+do $$declare n integer;begin
+ update public.dogleg_connections set status='accepted' where requester=auth.uid();get diagnostics n=row_count;if n<>0 then raise exception 'Sender accepted own request';end if;
+ begin insert into public.dogleg_connections(requester,recipient,requester_name,status) values(auth.uid(),'33333333-3333-4333-8333-333333333333','Test A','accepted');raise exception 'Forged accepted request permitted';exception when insufficient_privilege then null;end;
+end $$;
+select set_config('request.jwt.claims','{"sub":"22222222-2222-4222-8222-222222222222","role":"authenticated"}',true);
+do $$begin if exists(select 1 from public.dogleg_round_posts) then raise exception 'Pending friend saw post';end if;end $$;
+update public.dogleg_connections set status='accepted',recipient_name='Test B' where recipient=auth.uid();
+do $$begin if (select count(*) from public.dogleg_round_posts)<>1 then raise exception 'Accepted friend cannot read';end if;
+ begin update public.dogleg_connections set requester=auth.uid();raise exception 'Participant reassignment permitted';exception when insufficient_privilege then null;end;
+end $$;
+select set_config('request.jwt.claims','{"sub":"33333333-3333-4333-8333-333333333333","role":"authenticated"}',true);
+do $$declare n integer;begin
+ if exists(select 1 from public.dogleg_round_posts) then raise exception 'Stranger saw post';end if;
+ if exists(select 1 from public.dogleg_connections) then raise exception 'Stranger saw connection';end if;
+ update public.dogleg_round_posts set payload='{}';get diagnostics n=row_count;if n<>0 then raise exception 'Stranger modified post';end if;
+ begin insert into public.dogleg_round_posts(user_id,round_id,payload) values ('11111111-1111-4111-8111-111111111111','bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb','{"name":"Test","course":"Test","date":"2026-10-19","score":84,"holes":18,"tees":"White","notes":"","photos":[]}');raise exception 'Forged owner permitted';exception when insufficient_privilege then null;end;
+end $$;
+select set_config('request.jwt.claims','{"sub":"22222222-2222-4222-8222-222222222222","role":"authenticated"}',true);
+delete from public.dogleg_connections where recipient=auth.uid();
+do $$begin if exists(select 1 from public.dogleg_round_posts) then raise exception 'Removed friend saw post';end if;end $$;
+reset role;
+set local role anon;
+do $$begin begin perform 1 from public.dogleg_round_posts;raise exception 'Anonymous read permitted';exception when insufficient_privilege then null;end;end $$;
+reset role;
+rollback;
+select 'passed: pending/accepted/stranger/removed/anonymous access and forged writes' as privacy_test;
