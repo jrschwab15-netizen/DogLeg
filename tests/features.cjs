@@ -15,4 +15,14 @@ context.navigator.geolocation={getCurrentPosition:(success,error)=>error({code:1
 context.pickScorecard({type:'application/pdf',size:500});assert(elements.get('#scan-status').textContent.includes('PNG'));
 context.pickScorecard({type:'image/png',size:16000000});assert(elements.get('#scan-status').textContent.includes('15 MB'));
 const html=fs.readFileSync('index.html','utf8');new vm.Script(html.match(/<script>([\s\S]*)<\/script>/)[1]);
+context.savedRounds=[
+ {id:'a',course:'Meadow Links',tees:'White',notes:'Windy finish',date:'2026-09-01',holes:18,score:90},
+ {id:'b',course:'Oak and Pine',tees:'Blue',notes:'Morning nine',date:'2025-08-01',holes:9,score:43},
+ {id:'c',course:'Meadow Links',tees:'Blue',notes:'Best finish',date:'2026-10-01',holes:18,score:84}
+];
+assert.equal(vm.runInContext("selectRounds(savedRounds,{query:'BLUE',year:'all',holes:'all',sort:'newest'}).length",context),2);
+assert.equal(vm.runInContext("selectRounds(savedRounds,{query:'finish',year:'2026',holes:'18',sort:'score'})[0].id",context),'c');
+assert.equal(vm.runInContext("selectRounds(savedRounds,{query:'',year:'all',holes:'9',sort:'oldest'})[0].id",context),'b');
+assert.equal(vm.runInContext("selectRounds(savedRounds,{query:'missing',year:'all',holes:'all',sort:'newest'}).length",context),0);
+assert.equal(context.savedRounds[0].id,'a');
 console.log('Passed feature syntax, scorecard parsing, query escaping, nearby radius, distance, location unavailable/denied, and upload validation checks.');

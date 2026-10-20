@@ -8,5 +8,7 @@ Published to https://github.com/jrschwab15-netizen/DogLeg with GitHub Pages enab
 
 Verification: core Chrome desktop/mobile checks passed; live worldwide course search and simulated-coordinate nearby search passed; live OCR on a synthetic printed scorecard passed. npm test contains portable syntax and feature logic checks. Previous browser evidence is in docs/. Screenshots predate the newest header logo; the standalone build contains it. No physical-device GPS or handwriting guarantee.
 
+Desktop/mobile UI update: desktop has a sticky search/navigation header, wide dashboard, recent-round tables, and visible tracking summaries. Mobile retains centered Add, bottom navigation, and round cards. History supports course/tees/notes search, year and 9/18-hole filters, and sorting. The annual goal and direct course/scorecard/memory actions are visible on Home. Research, sources, and validation limits are in docs/UX-RESEARCH.md.
+
 V6 source was unavailable. V7 was reconstructed from approved requirements and the recovered original photograph.
 
