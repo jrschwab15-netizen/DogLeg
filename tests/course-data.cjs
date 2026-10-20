@@ -8,3 +8,22 @@ vm.runInContext('importedCourse=course;renderCourseControls=()=>{};drawHoles=()=
 c.course.tees[1].holes=Array.from({length:18},(_,i)=>({number:i+1,par:4,handicap:i+1,yards:300+i}));vm.runInContext('selectedCourseCard.tee.holes=course.tees[1].holes',c);c.courseRoundLength(9);assert.equal(fields.rating.value,'');assert.equal(fields.slope.value,'');assert.equal(vm.runInContext('courseCardHoles().length',c),9);vm.runInContext("courseNine='back'",c);assert.equal(vm.runInContext('courseCardHoles()[0].number',c),10);
 vm.runInContext(fs.readFileSync('src/template.html','utf8').split('\n').find(l=>l.startsWith('function validBackup(')),c);c.validRoundPhotos=()=>true;const round={id:'r',course:'Links',date:'2026-10-20',holes:18,score:84,rating:72,slope:130,tees:'White',putts:null,notes:'',scores:[],courseCard:{source:'OpenGolfAPI',courseId:raw.id,tee:c.course.tees[0]}};const journal={rounds:[round],notes:[],friends:[],challenges:[],shared:[],invites:[]};assert(c.validBackup(journal));round.courseCard.tee.holes[0].yards=Infinity;assert(!c.validBackup(journal));delete round.courseCard;assert(c.validBackup(journal));
 console.log('Passed exact tee yardages, separate rating sets, missing-data handling, nine-hole rating safety and V7 course-card validation.');
+
+assert.equal(c.preferredCourseTee(c.course,{courseCard:{courseId:c.course.id,tee:{id:'white-female'}}}),1);
+assert.equal(c.preferredCourseTee({tees:[{name:'Missing',rating:null,slope:null},{name:'Blue',rating:73,slope:133}]},null),1);
+assert.equal(c.preferredCourseTee({tees:[]},null),-1);
+assert.equal(c.preferredCourseTee({tees:[{name:'US Open',rating:76,slope:138},{name:'White',rating:71,slope:126}]},null),1);
+(async()=>{
+  const form={isConnected:true,querySelector:s=>fields[s.match(/name=(\w+)/)?.[1]]},status={textContent:''};
+  fields.course={value:'Links'};fields.holes.value='18';c.state={rounds:[]};
+  c.document.querySelector=s=>s==='#round-form'?form:s==='#round-form [name=holes]'?fields.holes:s==='#round-course-status'?status:s==='#course-card-controls'?controls:null;
+  c.courseRequest=async()=>c.course;
+  c.fillRoundCourse({name:'Links',courseId:raw.id});await new Promise(r=>setImmediate(r));
+  assert.equal(fields.rating.value,72);assert.equal(fields.slope.value,130);assert(status.textContent.includes('automatically'));
+  c.selectCourseTee('1');assert.equal(fields.rating.value,77);assert.equal(fields.slope.value,139);
+  c.matchCourseTee('unpublished tee');assert.equal(fields.rating.value,'');assert.equal(fields.slope.value,'');
+  let resolve;c.courseRequest=()=>new Promise(r=>resolve=r);c.fillRoundCourse({name:'Links',courseId:raw.id});fields.rating.value='70.1';fields.slope.value='120';resolve(c.course);await new Promise(r=>setImmediate(r));
+  assert.equal(fields.rating.value,'70.1');assert.equal(fields.slope.value,'120');
+  c.fillRoundCourse({name:'Links',courseId:raw.id});fields.course.value='Different course';resolve(c.course);await new Promise(r=>setImmediate(r));assert.equal(fields.rating.value,'');
+  console.log('Passed automatic course rating/slope, explicit tee changes, missing tee clearing, manual-entry preservation and stale course-response guards.');
+})().catch(e=>{console.error(e);process.exit(1)});
