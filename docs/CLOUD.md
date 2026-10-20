@@ -17,7 +17,7 @@ Each update checks the previous revision atomically. A stale device cannot overw
 
 Signed-out edits remain local. Continue without an account preserves the browser journal and remembers local mode. Log out returns to the login screen; account caches remain available on the device. Use trusted devices and log out when finished. This implementation does not add multiplayer Friends.
 
-The Supabase Site URL and allowed redirect URL are now https://jrschwab15-netizen.github.io/DogLeg/. Custom SMTP remains unconfigured. Signup does not send confirmation email. Password-recovery handling is present for future email-service configuration, but the login screen does not offer email resets while there is no public sender configured.
+The Supabase Site URL is now https://doglegclub.com/, and that exact redirect is allowed. The previous GitHub Pages redirect remains allowed for compatibility. Custom SMTP remains unconfigured. Signup does not send confirmation email. Password-recovery handling is present for future email-service configuration, but the login screen does not offer email resets while there is no public sender configured.
 
 ## Security
 
