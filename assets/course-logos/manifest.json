@@ -1,0 +1,130 @@
+[
+  {
+    "names": [
+      "bandon dunes",
+      "bandon dunes golf course",
+      "bandon dunes golf resort"
+    ],
+    "lat": 43.188,
+    "lon": -124.39,
+    "file": "bandon-dunes.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-Puffin.svg",
+    "verified": "2026-10-20",
+    "dark": true,
+    "ids": [
+      "7abca90d-223a-478b-af96-ffffd0ed8f1e"
+    ]
+  },
+  {
+    "names": [
+      "royal county down",
+      "royal county down golf club",
+      "royal county down golf course",
+      "royal county down championship"
+    ],
+    "lat": 54.219,
+    "lon": -5.884,
+    "file": "royal-county-down.png",
+    "source": "https://www.royalcountydown.org/",
+    "asset": "https://www.royalcountydown.org/images/resources/royalcountydown/2026-members-logo.png",
+    "verified": "2026-10-20",
+    "dark": false
+  },
+  {
+    "names": [
+      "pacific dunes",
+      "pacific dunes golf course"
+    ],
+    "lat": 43.2,
+    "lon": -124.39,
+    "file": "bandon-pacific.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-Pac.svg",
+    "verified": "2026-10-20",
+    "dark": true
+  },
+  {
+    "names": [
+      "bandon trails",
+      "bandon trails golf course"
+    ],
+    "lat": 43.2,
+    "lon": -124.39,
+    "file": "bandon-trails.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-Trails.svg",
+    "verified": "2026-10-20",
+    "dark": true
+  },
+  {
+    "names": [
+      "old macdonald",
+      "old macdonald golf course"
+    ],
+    "lat": 43.2,
+    "lon": -124.39,
+    "file": "old-macdonald.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-OM.svg",
+    "verified": "2026-10-20",
+    "dark": true
+  },
+  {
+    "names": [
+      "sheep ranch",
+      "sheep ranch golf course"
+    ],
+    "lat": 43.2,
+    "lon": -124.39,
+    "file": "sheep-ranch.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-Sheep-Ranch-1.svg",
+    "verified": "2026-10-20",
+    "dark": true
+  },
+  {
+    "names": [
+      "bandon preserve",
+      "bandon preserve golf course"
+    ],
+    "lat": 43.2,
+    "lon": -124.39,
+    "file": "bandon-preserve.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-Preserve.svg",
+    "verified": "2026-10-20",
+    "dark": true
+  },
+  {
+    "names": [
+      "shorty's",
+      "shorty's golf course"
+    ],
+    "lat": 43.2,
+    "lon": -124.39,
+    "file": "shortys.svg",
+    "source": "https://bandondunesgolf.com/",
+    "asset": "https://bandondunesgolf.com/wp-content/uploads/2023/11/Home-page-Logos-Shortys.svg",
+    "verified": "2026-10-20",
+    "dark": true
+  },
+  {
+    "names": [
+      "pinehurst no. 2",
+      "pinehurst no 2",
+      "pinehurst #2",
+      "pinehurst resort & country club - no. 2"
+    ],
+    "lat": 35.195,
+    "lon": -79.469,
+    "file": "pinehurst.svg",
+    "source": "https://www.pinehurst.com/",
+    "asset": "https://www.pinehurst.com/wp-content/uploads/2022/11/PB_1895_Logo_White.svg",
+    "verified": "2026-10-20",
+    "dark": true,
+    "ids": [
+      "b25a4e85-561a-4ca4-8028-7c3480c9bbc0"
+    ]
+  }
+]

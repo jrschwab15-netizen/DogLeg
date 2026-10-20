@@ -1,0 +1,6 @@
+// Local-only synthetic rounds. No cloud bootstrap or existing journal reads.
+const fs=require('fs'),http=require('http');let html=fs.readFileSync('index.html','utf8');
+const courses=[['Royal County Down',54.219,-5.884,20],['QA Colocated Course',54.219,-5.884,1],['Bandon Dunes',43.188,-124.39,2],['QA Away Course',36.5685,-121.949,1]];
+const state={profile:{name:'Map QA',home:'Synthetic fixture',goal:20},rounds:courses.flatMap(([course,lat,lon,count],i)=>Array.from({length:count},(_,n)=>({id:`qa-${i}-${n}`,course,date:'2026-10-20',holes:18,tees:'QA',score:85,rating:72,slope:113,putts:null,notes:'Synthetic QA record; not a real round.',scores:[],location:{lat,lon,address:'Synthetic QA location'}}))),notes:[],friends:[],challenges:[],shared:[],invites:[],draft:null};
+html=html.replace("const KEY='dogleg.v7'","const KEY='dogleg.qa.heat'").replace(/^const initial=\(\)=>.*$/m,'const initial=()=>('+JSON.stringify(state)+');').replace(/^let state=initial\(\),storageOK=true;.*$/m,'let state=initial(),storageOK=true;').replace("let tab='Home'","let tab='Passport'").replace('setTimeout(cloudBoot,0);',"authScreen='app';cloudUser=null;");
+http.createServer((req,res)=>{res.setHeader('Content-Type','text/html; charset=utf-8');res.end(html)}).listen(4175,'127.0.0.1',()=>console.log('Synthetic heatmap QA only: http://127.0.0.1:4175'));
