@@ -39,3 +39,5 @@ Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website
 
 
 Responsive UI audit and verification: see docs/UI-AUDIT.md. Run npm run ui:fixtures for static local Friends layout samples; these never connect to Supabase.
+
+Focused Home and Yardage Book details: docs/YARDAGE-BOOK.md. Source: src/journey.js; map imagery requires internet access.
