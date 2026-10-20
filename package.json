@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node scripts/build.cjs",
     "test": "node scripts/build.cjs && node tests/features.cjs && node tests/cloud.cjs && node tests/social.cjs",
-    "start": "node scripts/serve.cjs"
+    "start": "node scripts/serve.cjs",
+    "ui:fixtures": "node scripts/build.cjs && node scripts/ui-fixtures.cjs"
   },
   "engines": {
     "node": ">=20"

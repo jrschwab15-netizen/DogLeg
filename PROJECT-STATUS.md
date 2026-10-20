@@ -22,3 +22,5 @@ V6 source was unavailable. V7 was reconstructed from approved requirements and t
 
 
 Latest revision: removed the brown frame in favor of a light blue-green canvas, white navigation, teal actions and clearer text contrast. Home copy is more direct. Round entry now searches Photon while typing a course name, offers prior real courses first, and fills previous tees/rating/slope for an exact saved-course match. Directory selections fill available name/holes and display location; unknown tee ratings are left empty for scorecard confirmation. Existing score/date/notes remain in the form.
+
+Latest UI audit: a shared responsive layout now fixes intrinsic form-column sizing, compressed heading buttons, uneven card padding/stretch, content gutters, course rows, plot scaling, hidden scorecard previews and dialog widths. Six pages and round forms were measured at 320/390/768/1024/1440 px with no horizontal overflow. Logged-in Friends was inspected with local static fixtures; account forms were inspected without account changes. Courses View rounds now applies its filter. See docs/UI-AUDIT.md.

@@ -9,7 +9,7 @@ assert(!c.validRoundPhotos(['data:image/svg+xml;base64,PHN2Zz4=']));
 assert(!c.validRoundPhotos(Array(4).fill('data:image/jpeg;base64,/9j/')));
 assert(!c.validRoundPhotos(['data:image/jpeg;base64,'+'a'.repeat(90000)]));
 const round={id:'round',course:'Course',date:'2026-10-20',holes:18,score:84,tees:'Blue',notes:'Great day',rating:72,slope:113,putts:30,photos:['data:image/jpeg;base64,/9j/']};
-const payload=c.roundPostPayload(round,'Golfer');assert.equal(payload.course,'Course');assert.equal(payload.photos.length,1);assert(!('rating' in payload));assert(!('putts' in payload));
+c.state={rounds:[round]};c.go=()=>{};c.viewKnownCourse(0);assert.equal(vm.runInContext('trackingFilters.query',c),'Course');const payload=c.roundPostPayload(round,'Golfer');assert.equal(payload.course,'Course');assert.equal(payload.photos.length,1);assert(!('rating' in payload));assert(!('putts' in payload));
 // V7 backups without photos remain valid, while unsafe/oversized photo fields do not.
 vm.runInContext(fs.readFileSync('src/template.html','utf8').split('\n').find(l=>l.startsWith('function validBackup(')),c);
 const journal={rounds:[{...round,scores:[],putts:null}],notes:[],friends:[],challenges:[],shared:[],invites:[]};
