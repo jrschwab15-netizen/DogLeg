@@ -1,0 +1,12 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const id='40977ee8-33ee-4195-b6a2-99a4ca83c2bc';let handler,writes=0,requests=[];
+const db={from(table){assert.equal(table,'dogleg_course_catalog');return {select(){return this},eq(){return this},async maybeSingle(){return {data:null}},async upsert(row){writes++;assert.equal(row.id,id);assert.equal(row.data.source,'OpenGolfAPI');return {error:null}},ilike(){return this},async limit(){return {data:[]}}}},auth:{async getUser(token){return token==='valid-test-session'?{data:{user:{id:'test-user'}},error:null}:{data:{user:null},error:Error('invalid')}}}};
+const c={console,Response,URL,AbortSignal,Date,createClient:()=>db,Deno:{env:{get:()=> 'test-environment'},serve:h=>handler=h},fetch:async url=>{requests.push(url);return Response.json({id,course_name:'QA public source',holes:18,tees:[],holes_data:[]})}};vm.createContext(c);vm.runInContext(fs.readFileSync('src/course-schema.js','utf8').replaceAll('export function ','function '),c);vm.runInContext(fs.readFileSync('supabase/functions/course-data/index.ts','utf8').replace(/^import .*;$/gm,'').replace(/:(string|unknown)\b/g,'').replace(/\)!/g,')'),c);
+(async()=>{const endpoint='https://project.supabase.co/functions/v1/course-data?id='+id;
+assert.equal((await handler(new Request(endpoint))).status,401);assert.equal(writes,0);
+assert.equal((await handler(new Request(endpoint,{headers:{origin:'https://untrusted.example',authorization:'Bearer valid-test-session'}}))).status,403);assert.equal(writes,0);
+assert.equal((await handler(new Request(endpoint,{headers:{authorization:'Bearer invalid'}}))).status,401);assert.equal(writes,0);
+assert.equal((await handler(new Request(endpoint,{method:'POST',headers:{authorization:'Bearer valid-test-session'}}))).status,405);
+assert.equal((await handler(new Request(endpoint.replace(id,'../../other'),{headers:{authorization:'Bearer valid-test-session'}}))).status,400);assert.equal(requests.length,0);
+const good=await handler(new Request(endpoint,{headers:{origin:'https://doglegclub.com',authorization:'Bearer valid-test-session'}}));assert.equal(good.status,200);assert.equal(writes,1);assert.equal(requests[0],'https://api.opengolfapi.org/api/v1/courses/'+id);assert.equal(good.headers.get('Access-Control-Allow-Origin'),'https://doglegclub.com');
+console.log('Passed importer authentication, allowed origins, fixed upstream URL, input validation and service-only normalized writes.');})().catch(e=>{console.error(e);process.exit(1)});
