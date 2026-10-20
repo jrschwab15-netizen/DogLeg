@@ -10,5 +10,7 @@ Verification: core Chrome desktop/mobile checks passed; live worldwide course se
 
 Desktop/mobile UI update: desktop has a sticky search/navigation header, wide dashboard, recent-round tables, and visible tracking summaries. Mobile retains centered Add, bottom navigation, and round cards. History supports course/tees/notes search, year and 9/18-hole filters, and sorting. The annual goal and direct course/scorecard/memory actions are visible on Home. Research, sources, and validation limits are in docs/UX-RESEARCH.md.
 
+Latest typography/account update: embedded Source Sans 3 replaces decorative UI type at the user's request. Dedicated login and account-creation screens replace the inline Profile form. Sessions persist locally and refresh automatically; account journals restore from cache before network access. Email confirmation is disabled at the user's explicit request, so signup opens the journal immediately. Supabase email return URLs point to the live website. Password-reset email UI is withheld until custom SMTP is configured. Existing account-owned RLS and V7 backups remain.
+
 V6 source was unavailable. V7 was reconstructed from approved requirements and the recovered original photograph.
 

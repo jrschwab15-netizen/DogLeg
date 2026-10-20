@@ -4,8 +4,8 @@ The website stays on GitHub Pages. Supabase project DogLeg (ngayytqdpltqauqmtbgo
 
 ## Getting started
 
-1. Open Profile and create an email/password account.
-2. Confirm the email and return to Dogleg to sign in. Email delivery depends on the project's Supabase mail configuration; custom SMTP is needed for unrestricted public delivery. The confirmation email may redirect to the project's default URL; return to the live Dogleg website after confirming.
+1. Use the dedicated Create account screen to choose your name, email, and password. Email confirmation is disabled at the user's explicit request; successful signup opens the journal immediately.
+2. Returning users use the Log in screen. Sessions persist in browser local storage under dogleg-auth-v1 and refresh automatically. Account caches are restored before connecting to Supabase. No plaintext passwords are saved. Browser data deletion, logout, or server revocation can require another login.
 3. Choose Import this browser’s original journal to copy missing local rounds and memories into your account. Existing cloud records and profile take precedence. Update your player profile separately. Your original guest journal stays intact.
 4. Records from a standalone file or another browser need Export backup there, then Import V7 backup on the live site after signing in. Different origins cannot read each other's local storage.
 
@@ -15,7 +15,9 @@ Signed-in edits are cached by account and automatically saved to Supabase after 
 
 Each update checks the previous revision atomically. A stale device cannot overwrite a newer cloud revision. If a conflict appears, export a V7 backup before loading the latest cloud journal, then import the backup to merge missing records. Records with matching IDs keep the cloud version. Unsaved local edits/deletions to an existing ID need manual reconciliation from the exported backup. The pre-reload device snapshot is also retained in the account's local-storage key with :before-reload appended.
 
-Signed-out edits remain local. Signing out restores the guest journal; account caches remain available on the device. Use trusted devices and sign out when finished. This implementation does not add multiplayer Friends.
+Signed-out edits remain local. Continue without an account preserves the browser journal and remembers local mode. Log out returns to the login screen; account caches remain available on the device. Use trusted devices and log out when finished. This implementation does not add multiplayer Friends.
+
+The Supabase Site URL and allowed redirect URL are now https://jrschwab15-netizen.github.io/DogLeg/. Custom SMTP remains unconfigured. Signup does not send confirmation email. Password-recovery handling is present for future email-service configuration, but the login screen does not offer email resets while there is no public sender configured.
 
 ## Security
 
@@ -28,7 +30,13 @@ The journal is one JSON document per auth user, preserving V7 export compatibili
 - Existing feature/syntax tests and tests/cloud.cjs pass. Cloud tests cover ownership/revision filters, conflict and offline preservation, cache isolation, merge precedence, and an in-flight save after account change.
 - Live database tests ran in rolled-back transactions: own read/write succeeds; other-user access, ownership reassignment, and stale writes fail. Test users and records were not retained.
 - Supabase security advisors returned no findings.
-- Local HTTP preview verified the Profile account controls and preserved navigation/design. Supabase reports email auth and signup enabled, confirmation required; pinned SDK responds successfully.
+- Local HTTP preview verified the Profile account controls and preserved navigation/design. Initial verification reported confirmation required; the latest account-screen update below supersedes that setting. The pinned SDK responds successfully.
 - Real inbox delivery and a user's confirmed-account browser session require the user's own account and were not exercised by the agent.
+
+## Account screens and typography update
+
+The interface now embeds licensed Source Sans 3 regular/semibold/bold fonts. UI headings, body text, forms, tables, and numbers use that family; the original wordmark and painted board retain their branding. Fonts work in the standalone build without external font requests.
+
+Tests additionally cover cached-session startup, refresh configuration, offline restoration, and explicit logout. A temporary live Supabase account passed immediate signup without email, password login, session refresh, and private journal write/read. The test session was signed out, and the temporary account/journal were removed. Browser QA covers login/signup screens, guest navigation, and guest restoration after reload. Actual account authentication was verified through the same pinned Supabase SDK; no user's password was entered by the agent.
 
 The bundled runtime has Node but no npm executable. Validation ran the exact build/test commands from package.json directly with Node.

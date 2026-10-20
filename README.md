@@ -12,7 +12,7 @@ npm test
 npm start
 ```
 
-Open http://127.0.0.1:4173 after starting the server. Or open index.html directly for the offline journal. Club search and OCR downloads need internet; location depends on browser permission and secure-context support.
+Open http://127.0.0.1:4173 after starting the server. Create an account or log in on the entry screen; signup opens the journal without confirmation email. Returning sessions and journal data are cached locally. Choose Continue without an account for the browser-local journal. Or open index.html directly for local use. Club search and OCR downloads need internet; location depends on browser permission and secure-context support.
 
 ## Files
 
@@ -33,5 +33,5 @@ Add/open this folder as a local project in Codex. Ask it to read AGENTS.md and P
 
 ## Deployment status
 
-Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://jrschwab15-netizen.github.io/DogLeg/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. Supabase DogLeg (ngayytqdpltqauqmtbgo) stores private authenticated journals. Open Profile to create an account, confirm your email, and sign in. Import the original browser journal or a V7 backup to move existing records into your account. Changes save automatically with conflict protection. Friends remains a demo. See docs/CLOUD.md for details.
+Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://jrschwab15-netizen.github.io/DogLeg/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. Supabase DogLeg (ngayytqdpltqauqmtbgo) stores private authenticated journals. Use the dedicated account screens to create an account or log in. Signup is immediate, without confirmation email, and sessions are remembered on this device. Import the original browser journal or a V7 backup to move existing records into your account. Changes save automatically with conflict protection. Friends remains a demo. See docs/CLOUD.md for details.
 
