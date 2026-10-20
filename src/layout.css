@@ -225,3 +225,5 @@ dialog[open]{animation:dialog-arrive .2s ease-out}@keyframes dialog-arrive{from{
 .course-logo.course-logo-dark{background:#174c40}.round-icon .course-logo,.round-icon .course-monogram{width:38px;height:38px;border-radius:50%}
 .atlas-frequency-marker .atlas-flag-face::after{display:none}.atlas-frequency-marker .atlas-marker-label{bottom:auto;height:auto;line-height:1.3;padding:7px 10px}.course-inline-badge .course-logo{width:100%;height:100%;object-fit:contain;border-radius:0}.atlas-heat-legend{z-index:3}
 .atlas-map-nav button{min-width:44px}
+
+.course-logo.course-logo-compact{object-fit:cover;object-position:left center}

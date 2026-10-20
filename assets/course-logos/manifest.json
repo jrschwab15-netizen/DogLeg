@@ -126,5 +126,162 @@
     "ids": [
       "b25a4e85-561a-4ca4-8028-7c3480c9bbc0"
     ]
+  },
+  {
+    "file": "torrey-pines.png",
+    "names": [
+      "torrey pines",
+      "torrey pines golf course",
+      "torrey pines south course",
+      "torrey pines north course",
+      "torrey pines south",
+      "torrey pines north"
+    ],
+    "source": "https://www.sandiego.gov/torrey-pines",
+    "asset": "https://www.sandiego.gov/sites/default/files/torrey-pines-logo-stroke-shadow.png",
+    "ids": [
+      "9b9891db-3b45-48db-892f-149601b79d52"
+    ],
+    "lat": 32.8971363,
+    "lon": -117.247647,
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "oakmont.svg",
+    "names": [
+      "oakmont country club",
+      "oakmont country club pa",
+      "oakmont country club pennsylvania"
+    ],
+    "lat": 40.526,
+    "lon": -79.826,
+    "source": "https://www.oakmontcc.org/",
+    "asset": "https://static.clubessential.com/CEFED/_Axis-Website/Sites/OakmontCC2022/images/LogoColor.svg",
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "oakmont-glendale.png",
+    "names": [
+      "oakmont country club",
+      "oakmont country club glendale",
+      "oakmont country club ca"
+    ],
+    "dark": false,
+    "source": "https://www.oakmontcc.com/",
+    "asset": "https://www.oakmontcc.com/Oakmont-public-landing-theme/images/club-images/mobile-logo.png",
+    "ids": [
+      "4eb9126d-4857-4f25-87b8-47f8e15a2eac"
+    ],
+    "lat": 34.1935945,
+    "lon": -118.2341181,
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "harbour-town-mark.png",
+    "names": [
+      "harbour town",
+      "harbour town golf links",
+      "harbour town golf links at sea pines resort",
+      "harbour town golf links at sea pines"
+    ],
+    "source": "https://harbourtowngolfshop.com/",
+    "asset": "https://harbourtowngolfshop.com/cdn/shop/files/favico.png?crop=center&height=32&v=1700496662&width=32",
+    "ids": [
+      "25b56a69-913c-4505-8ee2-8534e2130116"
+    ],
+    "lat": 32.136286717,
+    "lon": -80.8097755909,
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "streamsong-mark.svg",
+    "names": [
+      "streamsong",
+      "streamsong red",
+      "streamsong blue",
+      "streamsong black",
+      "streamsong resort red course",
+      "streamsong resort blue course",
+      "streamsong resort black course",
+      "streamsong resort the chain"
+    ],
+    "dark": true,
+    "source": "https://www.streamsongresort.com/",
+    "asset": "https://www.streamsongresort.com/content/themes/base/assets/img/streamsong-logo-no-text.svg",
+    "ids": [
+      "bf3cfb6e-ec06-4d5c-856f-35df9c045c4e"
+    ],
+    "lat": 27.6928971,
+    "lon": -81.9343397,
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "whistling-straits.png",
+    "names": [
+      "whistling straits",
+      "whistling straits straits course",
+      "whistling straits the straits",
+      "whistling straits irish course",
+      "whistling straits the irish"
+    ],
+    "source": "https://www.destinationkohler.com/golf/whistling-straits/whistling-straits-golf-shop",
+    "asset": "https://s7d9.scene7.com/is/image/kohlerhospitality/WhistlingStraits_Logo_HRE_2014-04-01_BLK?fmt=png-alpha",
+    "ids": [
+      "2d201c28-68ec-4897-b7b1-8f19c8984d26"
+    ],
+    "lat": 43.8498513,
+    "lon": -87.7346448,
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "tpc-sawgrass.png",
+    "names": [
+      "tpc sawgrass",
+      "tpc sawgrass dyes valley course",
+      "tpc sawgrass dye’s valley course",
+      "tpc sawgrass dye's valley course",
+      "tpc sawgrass stadium course",
+      "tpc sawgrass the players stadium course"
+    ],
+    "source": "https://tpc.com/sawgrass/",
+    "asset": "https://tpc.com/sawgrass/wp-content/uploads/sites/51/2016/08/sawgrass-website.png",
+    "ids": [
+      "8a0c713e-0aee-40e9-a57f-ac384df48b7b"
+    ],
+    "lat": 30.198936,
+    "lon": -81.3948838,
+    "verified": "2026-10-20",
+    "compact": true
+  },
+  {
+    "file": "royal-portrush.svg",
+    "names": [
+      "royal portrush",
+      "royal portrush golf club",
+      "royal portrush dunluce links",
+      "royal portrush golf club dunluce links",
+      "royal portrush valley links"
+    ],
+    "lat": 55.198,
+    "lon": -6.652,
+    "source": "https://www.royalportrushgolfclub.com/",
+    "asset": "https://www.royalportrushgolfclub.com/wp-content/uploads/2025/06/Royal-Portrush-Golf-Club-Logo.svg",
+    "verified": "2026-10-20"
+  },
+  {
+    "file": "carnoustie.png",
+    "names": [
+      "carnoustie",
+      "carnoustie golf links",
+      "carnoustie championship course",
+      "carnoustie golf links championship course",
+      "carnoustie burnside course",
+      "carnoustie buddon course"
+    ],
+    "lat": 56.497,
+    "lon": -2.717,
+    "source": "https://www.carnoustiegolflinks.com/",
+    "asset": "https://www.carnoustiegolflinks.com/wp-content/uploads/2025/09/Carnoustie-Golf-Links-2025-Logo-e1758897910369.png",
+    "verified": "2026-10-20"
   }
 ]
