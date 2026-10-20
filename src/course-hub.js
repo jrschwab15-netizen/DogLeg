@@ -3,7 +3,7 @@ const courseEditorial=COURSE_EDITORIAL_DATA,coursePhotoCatalog=COURSE_PHOTO_DATA
 let courseHub=null,courseHubOwner=null,courseHubEpoch=0,courseHubSection='overview',courseHubTee=0,courseHubPosts=[],courseHubReviews=[],courseHubStatus='',courseHubBusy=false;
 let courseHubCommunitySequence=0,courseHubReviewDraft=null;
 const courseHubSections=[['overview','Overview'],['scorecard','Scorecard'],['clubhouse','Clubhouse'],['photos','Photos']];
-function courseHubId(c){return c?.courseId||c?.courseCard?.courseId||(/^[a-f0-9-]{36}$/i.test(c?.id||'')?c.id:null)}
+function courseHubId(c){return c?.courseId||c?.courseCard?.courseId||(!c?.course&&/^[a-f0-9-]{36}$/i.test(c?.id||'')?c.id:null)}
 function courseHubLocation(c){return c?.location||(Number.isFinite(c?.lat)&&Number.isFinite(c?.lon)?{lat:c.lat,lon:c.lon}:null)}
 function sameHubCourse(c,r){const a=courseHubId(c),b=courseHubId(r);if(a&&b)return a===b;if(courseBrandName(c.name||c.course)!==courseBrandName(r.course||r.name))return false;const x=courseHubLocation(c),y=courseHubLocation(r);if(x&&y)return Math.abs(x.lat-y.lat)<.03&&Math.abs(x.lon-y.lon)<.03;const brands=courseBrands.filter(b=>b.names.some(n=>courseBrandName(n)===courseBrandName(c.name||c.course)));return !brands.length||brands.length===1}
 function courseHubKey(c){const id=courseHubId(c);if(id)return 'id:'+id;const location=courseHubLocation(c);return ('name:'+courseBrandName(c.name||c.course)+(location?':'+location.lat.toFixed(3)+','+location.lon.toFixed(3):'')).slice(0,220)}
