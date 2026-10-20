@@ -33,5 +33,5 @@ Add/open this folder as a local project in Codex. Ask it to read AGENTS.md and P
 
 ## Deployment status
 
-Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://jrschwab15-netizen.github.io/DogLeg/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. The current app stores records locally; hosting alone does not synchronize records between devices. The existing Supabase DogLeg project is not connected: Supabase is a backend service, not static website hosting. No schema, authentication, or cloud persistence has been deployed.
+Published repository: https://github.com/jrschwab15-netizen/DogLeg. Live website: https://jrschwab15-netizen.github.io/DogLeg/. GitHub Pages serves the root index.html from main. Run the build and checks before pushing updates. Supabase DogLeg (ngayytqdpltqauqmtbgo) stores private authenticated journals. Open Profile to create an account, confirm your email, and sign in. Import the original browser journal or a V7 backup to move existing records into your account. Changes save automatically with conflict protection. Friends remains a demo. See docs/CLOUD.md for details.
 

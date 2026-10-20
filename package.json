@@ -5,7 +5,7 @@
   "description": "A warm country-club golf journal",
   "scripts": {
     "build": "node scripts/build.cjs",
-    "test": "node scripts/build.cjs && node tests/features.cjs",
+    "test": "node scripts/build.cjs && node tests/features.cjs && node tests/cloud.cjs",
     "start": "node scripts/serve.cjs"
   },
   "engines": {
