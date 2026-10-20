@@ -1,0 +1,90 @@
+[
+  {
+    "id": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+    "name": "Pebble Beach Golf Links",
+    "photos": [
+      {
+        "title": "Pebble Beach Golf Links 05.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Pebble_Beach_Golf_Links_05.jpg/1280px-Pebble_Beach_Golf_Links_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "source": "https://commons.wikimedia.org/wiki/File:Pebble_Beach_Golf_Links_05.jpg",
+        "credit": "Bernard Gagnon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "Pebble Beach Golf Links, 18th green.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Pebble_Beach_Golf_Links%2C_18th_green.jpg/1280px-Pebble_Beach_Golf_Links%2C_18th_green.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "source": "https://commons.wikimedia.org/wiki/File:Pebble_Beach_Golf_Links,_18th_green.jpg",
+        "credit": "WilliamFMeyer",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "9b9891db-3b45-48db-892f-149601b79d52",
+    "name": "Torrey Pines South",
+    "photos": []
+  },
+  {
+    "id": "b25a4e85-561a-4ca4-8028-7c3480c9bbc0",
+    "name": "Pinehurst No. 2",
+    "photos": [
+      {
+        "title": "Pinehurst No. 2.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Pinehurst_No._2.JPG/1280px-Pinehurst_No._2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "source": "https://commons.wikimedia.org/wiki/File:Pinehurst_No._2.JPG",
+        "credit": "Zhans33",
+        "license": "Public domain"
+      }
+    ]
+  },
+  {
+    "id": "7abca90d-223a-478b-af96-ffffd0ed8f1e",
+    "name": "Bandon Dunes",
+    "photos": [
+      {
+        "title": "View of Bandon Dunes from lodge patio.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/View_of_Bandon_Dunes_from_lodge_patio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "source": "https://commons.wikimedia.org/wiki/File:View_of_Bandon_Dunes_from_lodge_patio.jpg",
+        "credit": "Matthewwlloyd",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "title": "Bandon Dunes - 4th hole.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Bandon_Dunes_-_4th_hole.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "source": "https://commons.wikimedia.org/wiki/File:Bandon_Dunes_-_4th_hole.jpg",
+        "credit": "mwlloyd1216",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "8a0c713e-0aee-40e9-a57f-ac384df48b7b",
+    "name": "Dyes Valley",
+    "photos": []
+  },
+  {
+    "id": "2d201c28-68ec-4897-b7b1-8f19c8984d26",
+    "name": "Whistling Straits",
+    "photos": [
+      {
+        "title": "WhistlingStraits11Fairway.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/WhistlingStraits11Fairway.JPG/1280px-WhistlingStraits11Fairway.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "source": "https://commons.wikimedia.org/wiki/File:WhistlingStraits11Fairway.JPG",
+        "credit": "User:KevinTR",
+        "license": "Public domain"
+      },
+      {
+        "title": "2015 PGA Championship Whistling Straits Clubhouse.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/2015_PGA_Championship_Whistling_Straits_Clubhouse.jpg/1280px-2015_PGA_Championship_Whistling_Straits_Clubhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "source": "https://commons.wikimedia.org/wiki/File:2015_PGA_Championship_Whistling_Straits_Clubhouse.jpg",
+        "credit": "Jhansen23",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  }
+]

@@ -19,6 +19,7 @@ Open http://127.0.0.1:4173 after starting the server. Create an account or log i
 - src/template.html — application layout, styling, local data, and core flows.
 - src/features.js — Add menu, club search, nearby location, scorecard OCR and accounts.
 - src/round-social.js — Courses tab, round photos and accepted-friends feed.
+- src/course-hub.js — dedicated course pages, scorecards, reviews, leaderboards and galleries.
 - src/layout.css — shared responsive layout, cards, controls and dialog sizing.
 - assets/ — original sunset photograph and approved logo.
 - scripts/ — portable build and preview server.

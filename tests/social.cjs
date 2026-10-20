@@ -1,7 +1,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const element=()=>({textContent:'',append(){},setAttribute(){}});
 const c={console,modal:{addEventListener(){}},document:{createElement:element,head:element(),querySelector:()=>null},window:{},URL,URLSearchParams,AbortSignal,setTimeout,clearTimeout};
-vm.createContext(c);vm.runInContext(fs.readFileSync('src/features.js','utf8')+'\n'+fs.readFileSync('src/round-social.js','utf8'),c);
+vm.createContext(c);vm.runInContext(fs.readFileSync('src/course-schema.js','utf8').replaceAll('export function ','function '),c);vm.runInContext(fs.readFileSync('src/features.js','utf8')+'\n'+fs.readFileSync('src/round-social.js','utf8'),c);
 assert(c.validRoundPhotos(undefined));assert(c.validRoundPhotos([]));
 assert(c.validRoundPhotos(['data:image/jpeg;base64,/9j/']));
 assert(!c.validRoundPhotos(['https://example.com/photo.jpg']));
