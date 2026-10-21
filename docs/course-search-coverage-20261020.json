@@ -1,0 +1,526 @@
+{
+  "date": "2026-10-20",
+  "seed": 20261020,
+  "method": "Adare plus a seeded random sample of 16 from 20 international courses; correct-area requires coordinates within 0.75 degrees, not merely any fuzzy result. No journal reads/writes. Public live providers, not a concurrency/load test.",
+  "passed": 14,
+  "total": 17,
+  "results": [
+    {
+      "query": "Adare Manor",
+      "expectedArea": {
+        "lat": 52.56,
+        "lon": -8.77
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Adare Manor Hotel & Golf Resort Ireland",
+          "id": "6553935d-15ad-47a0-abda-b516dc8483ed",
+          "lat": 52.5619688,
+          "lon": -8.7730322,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Adare Manor Golf Club",
+          "id": "7a12017d-607f-4808-bbb1-e7ef65ef85c6",
+          "lat": 52.5704475,
+          "lon": -8.7790022,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Adare Manor Golf Club",
+          "country": "Éire / Ireland",
+          "lat": 52.5704929,
+          "lon": -8.7790615,
+          "source": "Photon"
+        },
+        {
+          "name": "Adare Manor Hotel & Golf Resort Ireland",
+          "country": "Éire / Ireland",
+          "lat": 52.5620857,
+          "lon": -8.7723375,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 603
+    },
+    {
+      "query": "Sao Paulo Golf Club",
+      "expectedArea": {
+        "lat": -23.67,
+        "lon": -46.7
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": null,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "São Paulo Golf Club",
+          "country": "Brasil",
+          "lat": -23.664614,
+          "lon": -46.70113,
+          "source": "Photon"
+        },
+        {
+          "name": "Santos São Vicente Golf Club",
+          "country": "Brasil",
+          "lat": -23.955142,
+          "lon": -46.3897046,
+          "source": "Photon"
+        },
+        {
+          "name": "São Francisco Golf Club",
+          "country": "Brasil",
+          "lat": -23.5539408,
+          "lon": -46.7683732,
+          "source": "Photon"
+        },
+        {
+          "name": "São Fernando Golf Club",
+          "country": "Brasil",
+          "lat": -23.5690547,
+          "lon": -46.8773446,
+          "source": "Photon"
+        },
+        {
+          "name": "Guarapiranga Golf & Country Club",
+          "country": "Brasil",
+          "lat": -23.787085,
+          "lon": -46.7820348,
+          "source": "Photon"
+        },
+        {
+          "name": "Goldenlake Golf Club",
+          "country": "Brasil",
+          "lat": -23.8087619,
+          "lon": -46.467949,
+          "source": "Photon"
+        },
+        {
+          "name": "Damha Golf Club",
+          "country": "Brasil",
+          "lat": -21.9439652,
+          "lon": -47.8979472,
+          "source": "Photon"
+        },
+        {
+          "name": "Guariroba Golf Club",
+          "country": "Brasil",
+          "lat": -22.9191882,
+          "lon": -46.9054705,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 538
+    },
+    {
+      "query": "Valderrama",
+      "expectedArea": {
+        "lat": 36.4,
+        "lon": -5.33
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Club de Golf Valderrama",
+          "id": "1e0f6d10-d250-42fa-8e41-cea1060a9b1a",
+          "lat": 36.2855151,
+          "lon": -5.3298865,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Club de Golf Valderrama",
+          "country": "España",
+          "lat": 36.2855009,
+          "lon": -5.3252204,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 683
+    },
+    {
+      "query": "Cabot Cliffs",
+      "expectedArea": {
+        "lat": 46.26,
+        "lon": -61.25
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Cabot Cliffs",
+          "id": "0401bffe-1f7b-4222-81e5-79af51ef4b74",
+          "lat": 46.2521788,
+          "lon": -61.2862803,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Cabot Cliffs",
+          "country": "Canada",
+          "lat": 46.2526965,
+          "lon": -61.2848988,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 333
+    },
+    {
+      "query": "Delhi Golf Club",
+      "expectedArea": {
+        "lat": 28.6,
+        "lon": 77.24
+      },
+      "foundInExpectedArea": false,
+      "publishedTeeSets": null,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Delhi Golf and Country Club",
+          "country": "Canada",
+          "lat": 42.8360754,
+          "lon": -80.4816921,
+          "source": "Photon"
+        },
+        {
+          "name": "Black Bear Golf Club",
+          "country": "United States",
+          "lat": 32.5487516,
+          "lon": -91.4851108,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 174
+    },
+    {
+      "query": "Hillandale",
+      "expectedArea": {
+        "lat": 36.03,
+        "lon": -78.94
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 9,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Hillandale Golf Course",
+          "id": "0db3a291-ebbb-450f-b145-038b055e6035",
+          "lat": 36.0243722743,
+          "lon": -78.9353293889,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Hillandale Country Club",
+          "id": "5cd2e86e-16c1-4897-a1d8-0813063da121",
+          "lat": 34.9098127916,
+          "lon": -88.4886074066,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Hillandale Golf Course",
+          "country": "United States",
+          "lat": 36.0219642,
+          "lon": -78.936338,
+          "source": "Photon"
+        },
+        {
+          "name": "Hill 'N Dale",
+          "country": "United States",
+          "lat": 42.8137517,
+          "lon": -76.0757923,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 360
+    },
+    {
+      "query": "Burnham Beeches",
+      "expectedArea": {
+        "lat": 51.54,
+        "lon": -0.64
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Burnham Beeches Golf Club",
+          "id": "f1e2ba7e-ad80-42e4-b85b-f8b7a6a3b486",
+          "lat": 51.5492284,
+          "lon": -0.6460634,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 359
+    },
+    {
+      "query": "Ballybunion",
+      "expectedArea": {
+        "lat": 52.5,
+        "lon": -9.67
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Ballybunion Golf Club",
+          "id": "f93a67b3-7d8b-4a11-a343-1ba4fc0aca2f",
+          "lat": 52.4961373,
+          "lon": -9.6787076,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 276
+    },
+    {
+      "query": "Cape Kidnappers",
+      "expectedArea": {
+        "lat": -39.64,
+        "lon": 177.07
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Cape Kidnappers Golf Course",
+          "id": "97851f9f-ad2f-411b-ae6a-7a90f3bfa6d7",
+          "lat": -39.6536294,
+          "lon": 177.0452052,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 337
+    },
+    {
+      "query": "Mink Meadows",
+      "expectedArea": {
+        "lat": 41.47,
+        "lon": -70.63
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 3,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Mink Meadows Golf Club",
+          "id": "1fd04d19-f26e-433f-b817-c50247f3fc34",
+          "lat": 41.4735436,
+          "lon": -70.6143892,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 244
+    },
+    {
+      "query": "Hirono",
+      "expectedArea": {
+        "lat": 34.77,
+        "lon": 135.02
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": null,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "廣野ゴルフ倶楽部",
+          "country": "日本",
+          "lat": 34.7674348,
+          "lon": 135.0176784,
+          "source": "Photon"
+        },
+        {
+          "name": "東広野ゴルフ倶楽部",
+          "country": "日本",
+          "lat": 34.7706781,
+          "lon": 135.0625232,
+          "source": "Photon"
+        }
+      ],
+      "errors": [],
+      "totalMs": 164
+    },
+    {
+      "query": "Sentosa",
+      "expectedArea": {
+        "lat": 1.24,
+        "lon": 103.83
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Sentosa Golf Club",
+          "id": "34159ebf-0b0a-41ac-b72c-9d853f7c3b84",
+          "lat": 1.2518683,
+          "lon": 103.8333731,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 253
+    },
+    {
+      "query": "Royal Dornoch",
+      "expectedArea": {
+        "lat": 57.88,
+        "lon": -4.02
+      },
+      "foundInExpectedArea": false,
+      "publishedTeeSets": null,
+      "detailError": null,
+      "matches": [],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 121
+    },
+    {
+      "query": "Paraparaumu",
+      "expectedArea": {
+        "lat": -40.89,
+        "lon": 174.98
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Paraparaumu Beach Golf Course",
+          "id": "35eac403-e61f-4a59-bb86-1d541caa5236",
+          "lat": -40.889643,
+          "lon": 174.9888807,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 802
+    },
+    {
+      "query": "Bandon Dunes",
+      "expectedArea": {
+        "lat": 43.19,
+        "lon": -124.39
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 8,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "Bandon Dunes Golf Resort",
+          "id": "7abca90d-223a-478b-af96-ffffd0ed8f1e",
+          "lat": 43.1986374,
+          "lon": -124.3909077,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "HTTP 503"
+        }
+      ],
+      "totalMs": 838
+    },
+    {
+      "query": "Fancourt",
+      "expectedArea": {
+        "lat": -33.95,
+        "lon": 22.41
+      },
+      "foundInExpectedArea": true,
+      "publishedTeeSets": 0,
+      "detailError": null,
+      "matches": [
+        {
+          "name": "The Links at Fancourt",
+          "id": "b9fbb73c-9d16-4738-aff0-99e835315a8b",
+          "lat": -33.966035,
+          "lon": 22.4208485,
+          "source": "OpenGolfAPI"
+        },
+        {
+          "name": "Fancourt Golf Estate",
+          "id": "16170feb-b274-49c5-8dfb-b9db306fecac",
+          "lat": -33.9607238,
+          "lon": 22.4123803,
+          "source": "OpenGolfAPI"
+        }
+      ],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "The operation was aborted due to timeout"
+        }
+      ],
+      "totalMs": 12249
+    },
+    {
+      "query": "Kigali Golf",
+      "expectedArea": {
+        "lat": -1.93,
+        "lon": 30.1
+      },
+      "foundInExpectedArea": false,
+      "publishedTeeSets": null,
+      "detailError": null,
+      "matches": [],
+      "errors": [
+        {
+          "source": "Photon",
+          "message": "The operation was aborted due to timeout"
+        }
+      ],
+      "totalMs": 12003
+    }
+  ]
+}

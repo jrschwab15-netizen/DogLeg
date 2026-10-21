@@ -1,5 +1,7 @@
 # Current state
 
+Course-search/mobile fixes deployed in 85bac16, with live Adare and 320/390px popup checks passed. Wider audit: 14/17 correct-area provider matches; production browser exposed an unavailable Photon fallback for Hirono. Adare tee data is absent upstream. Coverage is not ready to claim universal or mass-launch reliability. See docs/COURSE-SEARCH-QA.md.
+
 Current release: dedicated Courses tab, compressed round-photo attachments, and intentionally implemented accepted-friends requests/feed in Supabase. This supersedes historical Friends-demo notes below. Posting is off by default; private journals remain owner-only. Mobile puts Passport inside Courses to keep five navigation controls. See docs/COURSES-PHOTOS.md for testing and size limits.
 
 Dogleg V7 is a complete browser-local prototype. Latest approved design: welcoming country-club locker room with mahogany, brass, cream, green painted honours boards, original course sunset hero, and a generated Sunset D logo.

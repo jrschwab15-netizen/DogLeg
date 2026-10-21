@@ -43,3 +43,5 @@ Sharing preview: reviewed a fully loaded 1200×630 demo-journal screenshot (fict
 
 
 Messages compatibility correction: hosted release HTML reduced from 4,837,267 bytes to 3,113 bytes. Complete test chain passes, including exact bundle-content parity and standalone preservation. Local 390px hosted HTTP checks confirmed the entry/account screen, guest Home, loaded external styles/fonts, native round-entry form, no horizontal overflow and visible Save actions. No journal records were saved. Native Messages rendering is not claimed verified.
+
+Production course-search/mobile verification (2026-10-20): Adare listing/selection and 320/390px popup sizing, centered date, fixed background, internal scrolling and page restoration passed. Wider random provider audit 14/17; production Photon fallback failed for Hirono. Adare tee data absent upstream. Full evidence and limitations: docs/COURSE-SEARCH-QA.md.

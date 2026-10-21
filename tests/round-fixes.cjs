@@ -11,6 +11,19 @@ vm.createContext(c);vm.runInContext(source.split('\n').find(l=>l.startsWith('fun
  c.roundCourseResults=[{name:'Adare Manor Golf Club',address:'Ireland'}];resolveDirectory();
  resolveCards([{name:'The Golf Course at Adare Manor',courseId:'test'}]);await pending;
  assert.equal(c.roundCourseResults.length,2,'Retain directory matches after scorecard results arrive');
+
+ const buttons=[{disabled:true},{disabled:true}],resultsBox={innerHTML:''};
+ c.clubBusy=false;c.clubRequestId=0;c.courseResults=[];c.courseBadge=()=>'';c.esc=x=>x;c.COURSE_CREDIT='Credit';c.clubStatus=()=>{};
+ c.document.querySelector=s=>s==='#club-query'?{value:'Adare Manor'}:s==='#club-results'?resultsBox:null;
+ c.document.querySelectorAll=()=>buttons;
+ c.searchClubs=()=>{c.clubBusy=true;c.clubRequestId++;return new Promise(()=>{})};
+ c.courseRequest=async()=>[{name:'Adare Manor',courseId:'resort'}];
+ vm.runInContext(source.slice(source.indexOf('const directorySearchClubs='),source.indexOf('const baseFillRoundCourse=')),c);
+ await c.searchClubs();
+ assert.equal(c.clubBusy,false,'Fast results must unlock a subsequent search while the directory is pending');
+ assert(buttons.every(b=>!b.disabled));
+ assert(resultsBox.innerHTML.includes('Adare Manor'));
+ assert(!c.sameCourseChoice({name:'Oakmont',courseId:'CA'},{name:'Oakmont',courseId:'PA'}),'Distinct provider course identities must survive merging');
  const lock=fs.readFileSync('src/features.js','utf8').split("if(typeof openModal==='function'){")[1];
  let close;const body={style:{position:'',top:'',width:''}},modal={open:false,scrollTop:100,addEventListener(event,fn){close=fn}};
  const d={modal,document:{body},window:{scrollY:340,scrollTo(value){d.restored=value.top}},openModal(){modal.open=true}};
