@@ -1,7 +1,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const element=()=>({textContent:'',append(){},setAttribute(){}});
 const c={console,modal:{addEventListener(){}},document:{createElement:element,head:element(),querySelector:()=>null},window:{},URL,URLSearchParams,AbortSignal,setTimeout,clearTimeout};
-vm.createContext(c);vm.runInContext(fs.readFileSync('src/course-schema.js','utf8').replaceAll('export function ','function '),c);vm.runInContext(fs.readFileSync('src/features.js','utf8')+'\n'+fs.readFileSync('src/round-social.js','utf8'),c);
+vm.createContext(c);vm.runInContext(fs.readFileSync('src/course-schema.js','utf8').replaceAll('export function ','function '),c);vm.runInContext(fs.readFileSync('src/features.js','utf8')+'\n'+fs.readFileSync('src/round-social.js','utf8')+'\n'+fs.readFileSync('src/partners.js','utf8'),c);
 assert(c.validRoundPhotos(undefined));assert(c.validRoundPhotos([]));
 assert(c.validRoundPhotos(['data:image/jpeg;base64,/9j/']));
 assert(!c.validRoundPhotos(['https://example.com/photo.jpg']));
@@ -22,3 +22,5 @@ c.heading=()=>'';c.esc=v=>String(v??'').replaceAll('<','&lt;');vm.runInContext(f
 let release;const pending=new Promise(r=>release=r);c.testClient={from:()=>({select(){return this},order(){return this},limit(){return pending},then(resolve,reject){return pending.then(resolve,reject)}})};
 vm.runInContext("cloudUser={id:'alice'};cloudClient=testClient;socialOwner='alice';",c);
 (async()=>{const loading=c.loadSocial();await Promise.resolve();vm.runInContext("cloudUser={id:'bob'};socialReset();",c);release({data:[{user_id:'alice',payload}],error:null});await loading;assert.equal(vm.runInContext('socialPosts.length',c),0);assert.equal(vm.runInContext('socialConnections.length',c),0);let releaseDelete;const deleteWait=new Promise(r=>releaseDelete=r);c.cloudInit=()=>deleteWait;c.state={rounds:[{id:'same-round'}]};vm.runInContext("cloudUser={id:'alice'};",c);const deleting=c.deleteSavedRound('same-round');vm.runInContext("cloudUser={id:'bob'};",c);let touched=false;releaseDelete({from(){touched=true;throw Error('Unexpected cross-account mutation')}});await deleting;assert.equal(touched,false);assert.equal(c.state.rounds.length,1);console.log('Passed photo limits, unsafe URI rejection, V7 photo compatibility, post payload and feed account-race checks.');})().catch(e=>{console.error(e);process.exitCode=1});
+
+assert(!('partners' in c.roundPostPayload({...round,partners:[{name:'Private partner'}]},'Golfer')),'Partner names are not added to shared posts');
