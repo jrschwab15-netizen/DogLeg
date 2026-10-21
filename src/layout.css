@@ -261,3 +261,10 @@ dialog[open]{animation:dialog-arrive .2s ease-out}@keyframes dialog-arrive{from{
  #round-form .form-actions{position:sticky;bottom:0;z-index:2;margin:18px -18px 0;padding:12px 18px max(12px,env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:10px}
  #round-form .form-actions>button{min-width:0;min-height:48px;margin:0}
 }
+
+
+#round-form input[type=date]{text-align:center}
+#round-form input[type=date]::-webkit-date-and-time-value{text-align:center}
+#round-form input[type=date]::-webkit-datetime-edit{display:block;width:100%;text-align:center}
+html:has(dialog[open]),body:has(dialog[open]){overscroll-behavior:none}
+dialog:has(#round-form){overflow-anchor:none;overscroll-behavior:contain}

@@ -1,0 +1,21 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const source=fs.readFileSync('src/course-data.js','utf8');
+const line=source.split('\n').find(l=>l.startsWith('const basicFindRoundCourses='));
+let resolveCards,resolveDirectory;
+const status={textContent:''},input={value:'adare manor'},form={querySelector(){return input}};
+const c={courseSearchMemory:new Map(),roundCourseRequest:1,roundCourseResults:[],document:{querySelector(s){return s==='#round-form'?form:s==='#round-course-status'?status:null}},state:{rounds:[]},savedCourseMatches(){return []},courseChoice(x){return x},renderRoundCourses(items){c.roundCourseResults=items},courseRequest(){return new Promise(r=>resolveCards=r)},findRoundCourses(){c.directoryStarted=true;return new Promise(r=>resolveDirectory=r)}};
+vm.createContext(c);vm.runInContext(source.split('\n').find(l=>l.startsWith('function sameCourseChoice('))+'\n'+line,c);
+(async()=>{
+ const pending=c.findRoundCourses('adare manor',1);
+ assert(c.directoryStarted,'Worldwide lookup must start before scorecards resolve');
+ c.roundCourseResults=[{name:'Adare Manor Golf Club',address:'Ireland'}];resolveDirectory();
+ resolveCards([{name:'The Golf Course at Adare Manor',courseId:'test'}]);await pending;
+ assert.equal(c.roundCourseResults.length,2,'Retain directory matches after scorecard results arrive');
+ const lock=fs.readFileSync('src/features.js','utf8').split("if(typeof openModal==='function'){")[1];
+ let close;const body={style:{position:'',top:'',width:''}},modal={open:false,scrollTop:100,addEventListener(event,fn){close=fn}};
+ const d={modal,document:{body},window:{scrollY:340,scrollTo(value){d.restored=value.top}},openModal(){modal.open=true}};
+ vm.createContext(d);vm.runInContext("if(true){"+lock,d);
+ d.openModal('Round','');assert.equal(body.style.position,'fixed');assert.equal(body.style.top,'-340px');assert.equal(modal.scrollTop,0);
+ modal.open=false;close();assert.equal(body.style.position,'');assert.equal(d.restored,340);
+ console.log('Passed concurrent Adare search, merged directory/card results, popup page lock and scroll restoration.');
+})().catch(e=>{console.error(e);process.exitCode=1});
