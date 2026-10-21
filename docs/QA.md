@@ -65,3 +65,6 @@ Fixed geographic dots (2026-10-21): removed collision spreading and zoom-depende
 
 
 Statistics periods (2026-10-21): renamed Your year to Statistics across Yardage Book views. Statistics and Memories offer All time alongside individual years; all-time totals, averages, best rounds, monthly drilldowns and recaps include all non-sample years. Year-specific reporting remains unchanged. Regression checks verify mixed-year totals, bests, averages and month counts.
+
+
+Flexible course lookup (2026-10-21): candidate searches use the full phrase plus bounded name/location/prefix variants, fetched concurrently and cached; rank matches across names and locations in any order with accents, common golf abbreviations, partial words and small spelling errors. Existing Photon directory runs concurrently as fallback. Previously saved courses use the same matching. Verified Plantation Venice name/address against https://www.plantationgcc.com/our-club and /golf. Upstream ID eed1bd40-9db9-45f1-a061-fd870f722695 has the correct club website/phone/location but a wrong Haile name; expose the corrected club as directory-only, without binding its unverified tee card. Live public-data checks pass plantation venice, reversed words, plantaton venice, nashaw concord and Adare.
