@@ -49,3 +49,6 @@ Course-data import and automatic tee/scorecard filling: docs/COURSE-DATA.md.
 Annual Yardage Book statistics and research: docs/ANNUAL-YARDAGE-BOOK.md. Implementation: src/season.js.
 
 Map-led Yardage Book and verification: docs/MAP-EXPERIENCE.md. Implementation: src/atlas.js.
+
+
+Link sharing: `docs/SHARING.md` explains the fictional demo account, editable preview source and public social image used for rich link previews.

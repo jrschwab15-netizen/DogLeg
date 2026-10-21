@@ -1,0 +1,24 @@
+{
+  "name": "Alex Morgan",
+  "season": "2026",
+  "headline": "Your game. Everywhere.",
+  "tagline": "Log the round. Keep the story.",
+  "courses": [
+    {"name":"Pebble Beach Golf Links","short":"Pebble Beach","lat":36.5685,"lon":-121.949,"country":"United States"},
+    {"name":"Bandon Dunes","short":"Bandon Dunes","lat":43.188,"lon":-124.39,"country":"United States"},
+    {"name":"Torrey Pines","short":"Torrey Pines","lat":32.904,"lon":-117.245,"country":"United States"},
+    {"name":"Pinehurst No. 2","short":"Pinehurst","lat":35.195,"lon":-79.469,"country":"United States"},
+    {"name":"Harbour Town Golf Links","short":"Harbour Town","lat":32.135,"lon":-80.81,"country":"United States"},
+    {"name":"TPC Sawgrass","short":"TPC Sawgrass","lat":30.198,"lon":-81.394,"country":"United States"},
+    {"name":"Bethpage Black","short":"Bethpage Black","lat":40.742,"lon":-73.454,"country":"United States"},
+    {"name":"Whistling Straits","short":"Whistling Straits","lat":43.851,"lon":-87.736,"country":"United States"},
+    {"name":"Banff Springs","short":"Banff Springs","lat":51.167,"lon":-115.55,"country":"Canada"},
+    {"name":"Royal County Down","short":"Royal County Down","lat":54.219,"lon":-5.884,"country":"United Kingdom"}
+  ],
+  "scores": [92,89,88,87,86,90,85,83,88,84,82,86,81,87,83,85,80,84,82,79,81,76,80,79],
+  "recent": [
+    {"course":"Pebble Beach Golf Links","score":79,"date":"Oct 18"},
+    {"course":"Pinehurst No. 2","score":81,"date":"Oct 10"},
+    {"course":"Royal County Down","score":85,"date":"Sep 24"}
+  ]
+}

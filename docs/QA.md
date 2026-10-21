@@ -37,3 +37,6 @@ Not verified: physical iOS/Android devices, Safari/Firefox, screen-reader operat
 
 
 Mobile round-entry release: full-width native date field; Holes + Total strokes paired; Tees on its own row; compact viewport-bounded sheet; sticky header and Save actions. Local HTTP browser checks at 390×700 and 320×568 found no document/dialog horizontal overflow and visible Save actions. Full existing Node test chain passes. Physical iOS Safari remains unverified. This release excludes the staged membership/admin/backend changes.
+
+
+Sharing preview: reviewed a fully loaded 1200×630 demo-journal screenshot (fictional account, public course map, derived scoring statistics, recent rounds and original sunset image). Verified JPEG dimensions, HTML-response metadata and build asset copying. No real account data is used. Actual iMessage display/cache behavior remains device-dependent and has not been tested by sending messages.
