@@ -71,3 +71,6 @@ Flexible course lookup (2026-10-21): candidate searches use the full phrase plus
 
 
 La Cana directory coverage (2026-10-21): upstream scorecard search has no La Cana listing and Photon returns unrelated Cana-area courses. Added verified La Cana Golf Club supplement from https://www.puntacana.com/en/golf/la-cana-golf-course with coordinates 18°31′10″N 68°22′30″W from https://dgcine.gob.do/locaciones/en/location/la-cana-golf-club/. Supports La Cana, Lacana, Punta Cana and Puntacana Resort aliases; directory-only with no unverified tee card. Matching verified supplements remain available if remote searches fail.
+
+
+Full US course search (2026-10-21): embedded 15,667-record OpenGolfAPI snapshot (actual downloaded count) for local name/city/state/ZIP/fuzzy matching, removing remote search-result caps and per-keystroke API dependence for covered courses. Kept worldwide online fallbacks and verified supplemental records. Northern Spy is corrected from the geographically matching MA Townsend Ridge record and accepts its former name; unrelated NH record is not renamed. Snapshot is openly published under ODbL with source/update instructions in docs/COURSE-DIRECTORY.md. This improves US coverage; it does not guarantee all worldwide/current course names or source coordinate accuracy.
