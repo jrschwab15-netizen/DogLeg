@@ -4,6 +4,8 @@ http.createServer((req,res)=>{
  if(fixture)file=path.join(root,'dist/ui-fixtures',fixture[1]+'.html');
  else if(['/', '/index.html'].includes(pathname))file=path.join(root,'index.html');
  else if(pathname==='/standalone.html')file=path.join(root,'standalone.html');
+ else if(['/share','/share/'].includes(pathname))file=path.join(root,'share/index.html');
+ else if(pathname==='/share/preview-v2.jpg'){file=path.join(root,'share/preview-v2.jpg');type='image/jpeg'}
  else if(['/admin','/admin/'].includes(pathname))file=path.join(root,'admin/index.html');
  else if(/^\/assets\/runtime\/[a-z0-9.-]+\.(js|css)$/.test(pathname)){file=path.join(root,pathname.slice(1));type=pathname.endsWith('.js')?'application/javascript; charset=utf-8':'text/css; charset=utf-8'}
  else if(/^\/assets\/social\/[a-z0-9.-]+\.jpg$/.test(pathname)){file=path.join(root,pathname.slice(1));type='image/jpeg'}

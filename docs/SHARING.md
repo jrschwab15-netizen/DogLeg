@@ -24,3 +24,8 @@ Browser-reviewed at 1200 × 630 with loaded map tiles and embedded fonts. Every 
 The first image deployment kept the 4.8 MB standalone HTML as the hosted homepage. Apple documents a 1 MB limit for the previewed main page, so the page could be rejected even though its metadata and JPEG were reachable. The hosted build now externalizes the exact compiled JavaScript and CSS into content-hashed assets and references the existing logo file. The release homepage is about 3 KB; its metadata is still present without JavaScript. A high-resolution approved logo is also supplied as the apple-touch-icon/favicon.
 
 `standalone.html` keeps the complete embedded app. Demo fixture generators read that file. The build and tests enforce the hosted byte budget, bundle integrity and standalone preservation. Publish generated runtime assets alongside the homepage. Do not remove a previous runtime version while cached pages may still reference it. Already-generated Messages previews are client-controlled; actual rendering must still be checked on an iPhone.
+
+
+## Dedicated Messages share page
+
+Use `https://doglegclub.com/share/` for the public preview. It has its own matching canonical/og:url, a fresh image address, and the screenshot as a real visible HTML image. It requires no JavaScript, authentication or redirect to expose its metadata or photo. Open Dogleg enters the normal app. This isolates the preview from the homepage and its previous failed-preview identity; it is not proof of the remaining Messages failure cause. The user confirmed blue iMessage bubbles and that apple.com previews work in the same conversation. Native Messages still needs user verification.

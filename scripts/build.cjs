@@ -3,3 +3,5 @@ const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'.
 if(fs.existsSync('assets/social'))fs.cpSync('assets/social','dist/assets/social',{recursive:true});
 
 require('./package-hosted.cjs')(html);
+
+require('./build-share-landing.cjs')();

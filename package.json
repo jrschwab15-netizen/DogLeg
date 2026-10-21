@@ -5,7 +5,7 @@
   "description": "A warm country-club golf journal",
   "scripts": {
     "build": "node scripts/build.cjs",
-    "test": "node scripts/build.cjs && node tests/features.cjs && node tests/cloud.cjs && node tests/social.cjs && node tests/journey.cjs && node tests/course-data.cjs && node tests/course-edge.cjs && node tests/season.cjs && node tests/atlas.cjs && node tests/course-brands.cjs && node tests/course-hub.cjs && node tests/logo-discovery.cjs && node tests/logo-client.cjs && node tests/share.cjs && node tests/hosting.cjs",
+    "test": "node scripts/build.cjs && node tests/features.cjs && node tests/cloud.cjs && node tests/social.cjs && node tests/journey.cjs && node tests/course-data.cjs && node tests/course-edge.cjs && node tests/season.cjs && node tests/atlas.cjs && node tests/course-brands.cjs && node tests/course-hub.cjs && node tests/logo-discovery.cjs && node tests/logo-client.cjs && node tests/share.cjs && node tests/hosting.cjs && node tests/share-landing.cjs",
     "start": "node scripts/serve.cjs",
     "ui:fixtures": "node scripts/build.cjs && node scripts/ui-fixtures.cjs",
     "share:build": "node scripts/build-share-preview.cjs",
