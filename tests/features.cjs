@@ -14,7 +14,7 @@ context.nearbyClubs();assert(elements.get('#club-status').textContent.includes('
 context.navigator.geolocation={getCurrentPosition:(success,error)=>error({code:1})};context.nearbyClubs();assert(elements.get('#club-status').textContent.includes('declined'));
 context.pickScorecard({type:'application/pdf',size:500});assert(elements.get('#scan-status').textContent.includes('PNG'));
 context.pickScorecard({type:'image/png',size:16000000});assert(elements.get('#scan-status').textContent.includes('15 MB'));
-const html=fs.readFileSync('index.html','utf8');new vm.Script(html.match(/<script>([\s\S]*)<\/script>/)[1]);
+const html=fs.readFileSync('standalone.html','utf8');new vm.Script(html.match(/<script>([\s\S]*)<\/script>/)[1]);
 context.savedRounds=[
  {id:'a',course:'Meadow Links',tees:'White',notes:'Windy finish',date:'2026-09-01',holes:18,score:90},
  {id:'b',course:'Oak and Pine',tees:'Blue',notes:'Morning nine',date:'2025-08-01',holes:9,score:43},

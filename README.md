@@ -12,7 +12,7 @@ npm test
 npm start
 ```
 
-Open http://127.0.0.1:4173 after starting the server. Create an account or log in on the entry screen; signup opens the journal without confirmation email. Returning sessions and journal data are cached locally. Choose Continue without an account for the browser-local journal. Or open index.html directly for local use. Club search and OCR downloads need internet; location depends on browser permission and secure-context support.
+Open http://127.0.0.1:4173 after starting the server. Create an account or log in on the entry screen; signup opens the journal without confirmation email. Returning sessions and journal data are cached locally. Choose Continue without an account for the browser-local journal. Use standalone.html for the fully embedded single-file version. Club search and OCR downloads need internet; location depends on browser permission and secure-context support.
 
 ## Files
 
@@ -25,7 +25,9 @@ Open http://127.0.0.1:4173 after starting the server. Create an account or log i
 - assets/ — original sunset photograph and approved logo.
 - scripts/ — portable build and preview server.
 - tests/features.cjs — syntax and feature logic checks.
-- index.html — generated standalone application.
+- index.html — small generated hosted entry page.
+- standalone.html — generated fully embedded single-file application.
+- assets/runtime/ — generated content-hashed scripts and styles for hosting.
 - dist/index.html — generated static hosting build.
 - docs/ — feature documentation, prior QA results, and screenshots.
 - PROJECT-STATUS.md — completed work, limitations, and pending cloud integration.
@@ -52,3 +54,6 @@ Map-led Yardage Book and verification: docs/MAP-EXPERIENCE.md. Implementation: s
 
 
 Link sharing: `docs/SHARING.md` explains the fictional demo account, editable preview source and public social image used for rich link previews.
+
+
+Messages preview compatibility: the hosted homepage stays below Apple’s documented 1 MB main-resource limit. Always publish `index.html` together with `assets/runtime/`, the approved logo and social image. `standalone.html` retains embedded application images/fonts for portable use.

@@ -17,3 +17,10 @@ Alex Morgan is fictional. This does not create a Supabase account, publish any r
 ## Verification
 
 Browser-reviewed at 1200 × 630 with loaded map tiles and embedded fonts. Every element fits within the image; the saved JPEG is under 100 KB. Deployment checks should verify the public image is `image/jpeg`, has the declared dimensions, and the raw homepage response contains its exact absolute `og:image` URL. Actual iMessage rendering/cache behavior requires testing in Messages on an iPhone and is not claimed here.
+
+
+## Messages resource-size correction
+
+The first image deployment kept the 4.8 MB standalone HTML as the hosted homepage. Apple documents a 1 MB limit for the previewed main page, so the page could be rejected even though its metadata and JPEG were reachable. The hosted build now externalizes the exact compiled JavaScript and CSS into content-hashed assets and references the existing logo file. The release homepage is about 3 KB; its metadata is still present without JavaScript. A high-resolution approved logo is also supplied as the apple-touch-icon/favicon.
+
+`standalone.html` keeps the complete embedded app. Demo fixture generators read that file. The build and tests enforce the hosted byte budget, bundle integrity and standalone preservation. Publish generated runtime assets alongside the homepage. Do not remove a previous runtime version while cached pages may still reference it. Already-generated Messages previews are client-controlled; actual rendering must still be checked on an iPhone.

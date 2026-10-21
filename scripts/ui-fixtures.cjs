@@ -1,7 +1,7 @@
 // Static, local-only UI fixtures. Never connects to Supabase or creates accounts.
 const fs=require('fs'),vm=require('vm'),path=require('path');
 process.chdir(path.resolve(__dirname,'..'));
-const template=fs.readFileSync('src/template.html','utf8'),built=fs.readFileSync('index.html','utf8'),styles=[];
+const template=fs.readFileSync('src/template.html','utf8'),built=fs.readFileSync('standalone.html','utf8'),styles=[];
 const element=()=>({textContent:'',addEventListener(){},setAttribute(){}});
 const c={console,state:{profile:{name:'Alex Morgan',home:'Home course',goal:20},rounds:[]},tab:'Friends',document:{createElement:element,head:{append:s=>styles.push(s.textContent)},querySelector:()=>null},modal:element(),window:{},URL,URLSearchParams,AbortSignal,setTimeout:()=>0,clearTimeout(){}};
 vm.createContext(c);

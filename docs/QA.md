@@ -40,3 +40,6 @@ Mobile round-entry release: full-width native date field; Holes + Total strokes 
 
 
 Sharing preview: reviewed a fully loaded 1200×630 demo-journal screenshot (fictional account, public course map, derived scoring statistics, recent rounds and original sunset image). Verified JPEG dimensions, HTML-response metadata and build asset copying. No real account data is used. Actual iMessage display/cache behavior remains device-dependent and has not been tested by sending messages.
+
+
+Messages compatibility correction: hosted release HTML reduced from 4,837,267 bytes to 3,113 bytes. Complete test chain passes, including exact bundle-content parity and standalone preservation. Local 390px hosted HTTP checks confirmed the entry/account screen, guest Home, loaded external styles/fonts, native round-entry form, no horizontal overflow and visible Save actions. No journal records were saved. Native Messages rendering is not claimed verified.
