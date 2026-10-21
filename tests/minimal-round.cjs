@@ -19,5 +19,11 @@ for(const name of ['readRound','saveRound','validBackup','differential','estimat
  fields.rating='71.2';fields.slope='128';fields.tees='White';const detailed=c.readRound();assert.equal(detailed.rating,71.2);assert.equal(detailed.slope,128);
  const line=template.split('\n').find(l=>l.startsWith('function roundForm('));
  const required=[...line.matchAll(/<input([^>]*\brequired\b[^>]*)>/g)].map(m=>m[1].match(/name="([^"]+)"/)?.[1]);assert.deepEqual(required,['course','date','score']);
+ fields.scoreNotKept='on';fields.score='';await c.saveRound({preventDefault(){}},'');
+ const unscored=c.saved.rounds[0];assert.equal(unscored.score,null);assert.equal(unscored.scoreNotKept,true);assert(c.validBackup(c.saved));assert.equal(c.differential({...unscored,rating:72,slope:113}),null);assert.equal(c.estimate([rated,rated,rated,unscored]),18);
+ delete fields.scoreNotKept;const count=c.state.rounds.length;await c.saveRound({preventDefault(){}},'');assert.equal(c.state.rounds.length,count,'Blank score still requires explicit override');
+ const calendar={Date,today:()=> '2026-10-21'};vm.createContext(calendar);vm.runInContext(fs.readFileSync('src/features.js','utf8').split('let roundDateView=null;')[1],calendar);
+ assert(calendar.roundDateParts('2024-02-29'));assert.equal(calendar.roundDateParts('2026-02-29'),null);assert.equal(calendar.roundDateIso(2026,12,1),'2027-01-01');
+ const markup=calendar.roundCalendarMarkup('2026-10-21',2024,1);assert.equal((markup.match(/data-round-date=/g)||[]).length,29);assert.equal((markup.match(/tabindex="0"/g)||[]).length,1);
  console.log('Passed minimal round save, null metadata, backup validity, known-tee preservation and handicap exclusion.');
 })().catch(e=>{console.error(e);process.exitCode=1});

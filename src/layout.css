@@ -280,3 +280,26 @@ dialog:has(#round-form){overflow-anchor:none;overscroll-behavior:contain}
 .club-map-cartography{filter:sepia(.26) saturate(.45) hue-rotate(65deg) contrast(.93)}
 .atlas-detail{padding-top:46px;background:var(--paper);border-color:var(--line)}
 .atlas-detail-close{position:absolute;right:8px;top:6px;min-width:44px;min-height:36px;padding:6px;font-size:24px;line-height:1;color:var(--green)}
+
+
+/* The calendar stays inside the round sheet rather than opening a clipped native popup. */
+#round-form #round-date-input{text-align:center;cursor:pointer;min-width:0;width:100%}
+#round-form .round-date>label{margin-bottom:8px}
+.round-date-picker{box-sizing:border-box;max-width:100%;margin:0 0 18px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--paper);scroll-margin-block:80px}
+.round-date-picker[hidden]{display:none!important}
+.date-calendar-heading{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:6px;text-align:center}
+#round-form .date-calendar-heading button{padding:0;min-height:36px;height:36px;font-size:24px}
+.date-calendar-selects{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:8px}
+#round-form .date-calendar-selects select{height:38px;min-height:38px;padding:6px;font-size:14px}
+.date-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center;align-items:center}
+#round-form .date-calendar-grid button{min-width:0;min-height:32px;padding:2px;background:transparent;color:var(--ink);border:1px solid transparent;border-radius:7px;box-shadow:none;font-size:14px}
+#round-form .date-calendar-grid button.is-selected{background:var(--green);color:#fff}
+#round-form .date-calendar-grid button.is-today{border-color:var(--green)}
+.date-weekday{font-size:11px;color:var(--muted);padding-block:5px}
+.date-calendar-footer{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
+#round-form .date-calendar-footer button{padding:6px;min-height:36px;font-size:13px}
+#round-form .round-score-field>label:first-child{margin-bottom:8px}
+#round-form .score-not-kept{display:flex;align-items:center;gap:8px;font-size:13px;margin:0 0 16px;min-height:28px}
+#round-form .score-not-kept input[type=checkbox]{width:18px;height:18px;min-height:18px;margin:0;flex:0 0 18px;accent-color:var(--green);padding:0}
+#score-not-kept-note{font-size:12px;margin:0 0 16px}
+.score.is-unscored,.table-score.is-unscored{font-size:13px;line-height:1.35;max-width:85px;white-space:normal}
