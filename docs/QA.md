@@ -59,3 +59,6 @@ Played-course map correction (2026-10-21): Places now defaults to All years and 
 
 
 Responsive control sizing (2026-10-21): widened the Yardage Book year selector, reserved consistent select-arrow space, stacked narrow-screen headings and history filters, retained 16px mobile field text, allowed card/action headings to wrap, and stacked calendar month/year controls below 360px. Local 320px visual checks cover All years, All rounds, Lowest strokes, Profile, Friends, Courses, Add and round calendar. No record or behavior changes.
+
+
+Fixed geographic dots (2026-10-21): removed collision spreading and zoom-dependent icon offsets. Every marker stays centered on its saved latitude/longitude with a constant 12px dot. Only courses with exactly identical coordinates share a chooser; geographic grouping no longer depends on zoom projection. Rendering regression checks assert unchanged coordinates and anchors at zooms 3, 8, 14 and 19.
