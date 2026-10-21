@@ -272,3 +272,11 @@ dialog:has(#round-form){overflow-anchor:none;overscroll-behavior:contain}
 /* Played places are distinct dots at every zoom, with a 44px touch target. */
 .atlas-frequency-marker.is-dot .atlas-flag-face{background:#137b6a;border:2px solid #fff;box-shadow:0 1px 5px #17392b66}
 .atlas-frequency-marker.is-dot.is-selected .atlas-flag-face{background:#d6ad48;outline:2px solid #145746;outline-offset:3px}
+
+/* Quiet overview; the course panel appears only after an explicit selection. */
+.atlas-detail[hidden]{display:none!important}
+.atlas-stage{background:#e2ebe5;border:1px solid var(--line)}
+.atlas-stage #journey-map{background:#e4ece5}
+.club-map-cartography{filter:sepia(.26) saturate(.45) hue-rotate(65deg) contrast(.93)}
+.atlas-detail{padding-top:46px;background:var(--paper);border-color:var(--line)}
+.atlas-detail-close{position:absolute;right:8px;top:6px;min-width:44px;min-height:36px;padding:6px;font-size:24px;line-height:1;color:var(--green)}
