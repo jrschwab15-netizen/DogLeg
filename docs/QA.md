@@ -62,3 +62,6 @@ Responsive control sizing (2026-10-21): widened the Yardage Book year selector, 
 
 
 Fixed geographic dots (2026-10-21): removed collision spreading and zoom-dependent icon offsets. Every marker stays centered on its saved latitude/longitude with a constant 12px dot. Only courses with exactly identical coordinates share a chooser; geographic grouping no longer depends on zoom projection. Rendering regression checks assert unchanged coordinates and anchors at zooms 3, 8, 14 and 19.
+
+
+Statistics periods (2026-10-21): renamed Your year to Statistics across Yardage Book views. Statistics and Memories offer All time alongside individual years; all-time totals, averages, best rounds, monthly drilldowns and recaps include all non-sample years. Year-specific reporting remains unchanged. Regression checks verify mixed-year totals, bests, averages and month counts.
