@@ -56,3 +56,6 @@ Round date and unscored entry (2026-10-21): replaced the native date popup with 
 
 
 Played-course map correction (2026-10-21): Places now defaults to All years and keeps its year filter separate from annual statistics. Distinct nearby courses retain individual dots rather than merging into regional clusters; only identical coordinates share a chooser. Demo account diagnosis: six located courses across 2025/2026, but old default showed three 2026 courses as two regional dots. No account records were edited. Regression tests cover all-year defaults, independent annual year, new unscored round inclusion and nearby separate markers.
+
+
+Responsive control sizing (2026-10-21): widened the Yardage Book year selector, reserved consistent select-arrow space, stacked narrow-screen headings and history filters, retained 16px mobile field text, allowed card/action headings to wrap, and stacked calendar month/year controls below 360px. Local 320px visual checks cover All years, All rounds, Lowest strokes, Profile, Friends, Courses, Add and round calendar. No record or behavior changes.

@@ -303,3 +303,31 @@ dialog:has(#round-form){overflow-anchor:none;overscroll-behavior:contain}
 #round-form .score-not-kept input[type=checkbox]{width:18px;height:18px;min-height:18px;margin:0;flex:0 0 18px;accent-color:var(--green);padding:0}
 #score-not-kept-note{font-size:12px;margin:0 0 16px}
 .score.is-unscored,.table-score.is-unscored{font-size:13px;line-height:1.35;max-width:85px;white-space:normal}
+
+/* Keep selected values readable without relying on browser-specific arrow spacing. */
+select{box-sizing:border-box;appearance:none;-webkit-appearance:none;padding-inline-end:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23365e54' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:12px 8px}
+.book-heading>div{min-width:0;flex:1}
+.book-heading .book-year{flex:0 0 132px;min-width:132px;width:132px}
+.book-year select{font-size:16px;padding:12px 36px 12px 12px}
+.card-head,.section-title{flex-wrap:wrap}
+.card-head h2,.section-title h2{min-width:0}
+@media(max-width:850px){
+ input,select,textarea{font-size:16px}
+ .book-heading .book-year{flex-basis:128px;min-width:128px;width:128px}
+ .book-heading .book-year select{font-size:16px;padding:12px 36px 12px 12px}
+ .round-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .round-filters label:first-child,.round-filters label:has(select[onchange*="sort"]){grid-column:1/-1}
+ #round-form .date-calendar-selects select{font-size:16px;padding-inline:8px 28px;background-position:right 8px center}
+}
+@media(max-width:480px){
+ .round-filters{grid-template-columns:minmax(0,1fr)}
+ .round-filters>*{grid-column:1!important}
+ .book-heading{flex-wrap:wrap}
+ .book-heading>div{flex-basis:100%}
+ .book-heading .book-year{margin:0 0 16px}
+ .form-actions>button{min-width:0;flex:1 1 120px;white-space:normal}
+}
+@media(max-width:360px){
+ .date-calendar-selects{grid-template-columns:minmax(0,1fr)}
+ .home-utilities{flex-wrap:wrap;gap:8px 16px}
+}
