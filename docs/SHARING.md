@@ -1,31 +1,21 @@
 # Dogleg link preview
 
-The public social image is `assets/social/dogleg-share-v1.jpg`: a 1200 × 630 JPEG screenshot of an intentionally composed demo journal. It features the approved Sunset D, original course photograph, real public course locations, a map, scoring summaries, recent rounds and a memory card. Map attribution stays visible.
+Share the normal site URL: **https://doglegclub.com/**. No separate landing page or query parameter is required.
 
-Alex Morgan is fictional. This does not create a Supabase account, publish any real journal, or change local records. Every account statistic is illustrative; scoring average and best score are derived from `data/share-demo.json`. The preview is a marketing composition, rather than a screenshot of a particular live member's screen.
+The main `index.html` contains static Open Graph and Twitter metadata. Its canonical URL and `og:url` both point to the normal homepage. The preview image is committed at the repository root as **og-image.jpg**, publicly available at **https://doglegclub.com/og-image.jpg**. The separate `/share/` page has been removed at the user's request.
 
-## Update the image
+The image is a 1200 × 630 JPEG of a fictional demo journal: course map, scoring statistics, recent rounds and a memory photo. It uses the approved logo and original course photograph; no real member account or journal is published.
 
-1. Edit `data/share-demo.json` for the name, scores, courses and recent rounds. Edit `src/share-preview.html` for the composition.
-2. Run `node scripts/build-share-preview.cjs`, then `node scripts/serve-share-preview.cjs`. Open `http://127.0.0.1:4182`.
-3. Set the browser viewport to exactly **1200 × 630**. Wait for fonts and all map tiles. Check that the full memory card, map attribution and footer fit, then capture a JPEG screenshot to a new `assets/social/dogleg-share-vN.jpg` file.
-4. Update the image URL in the source metadata to the new versioned filename. Versioning avoids an older cached image being reused by clients. Run the app build, which copies social assets into `dist/assets/social` for static hosts.
-5. Publish the static JPEG and the root HTML with its metadata, then confirm the image URL is accessible without signing in. Existing Messages previews may stay cached; new previews are controlled by the receiving app.
+## Update the screenshot
 
-`og:*`, the canonical URL, description and Twitter large-image tags are present in the original HTML response. They are not inserted by JavaScript. This follows [Apple's rich-preview guidance](https://developer.apple.com/documentation/technotes/tn3156-create-rich-previews-for-messages). The shared link opens the ordinary Dogleg app; the demo composition is only its preview image. No iMessage messages were sent as a test.
+1. Edit `data/share-demo.json` and, if needed, `src/share-preview.html`.
+2. Run `node scripts/build-share-preview.cjs`, then `node scripts/serve-share-preview.cjs`.
+3. Capture the fully loaded page at exactly 1200 × 630 to `assets/social/dogleg-share-v1.jpg`.
+4. Run the normal build. It copies that screenshot to `og-image.jpg` and `dist/og-image.jpg`.
+5. Publish the generated root HTML, root image and required runtime assets to GitHub Pages. An image-only cache version can be added to the metadata's image URL after future image changes; the shared website URL stays the normal homepage.
 
-## Verification
+The hosted HTML remains small (about 3 KB), with exact compiled JavaScript and CSS loaded from `assets/runtime/`. `standalone.html` retains the fully embedded application. This addresses [Apple's documented 1 MB main-page guideline](https://developer.apple.com/documentation/technotes/tn3156-create-rich-previews-for-messages).
 
-Browser-reviewed at 1200 × 630 with loaded map tiles and embedded fonts. Every element fits within the image; the saved JPEG is under 100 KB. Deployment checks should verify the public image is `image/jpeg`, has the declared dimensions, and the raw homepage response contains its exact absolute `og:image` URL. Actual iMessage rendering/cache behavior requires testing in Messages on an iPhone and is not claimed here.
+## Verification limits
 
-
-## Messages resource-size correction
-
-The first image deployment kept the 4.8 MB standalone HTML as the hosted homepage. Apple documents a 1 MB limit for the previewed main page, so the page could be rejected even though its metadata and JPEG were reachable. The hosted build now externalizes the exact compiled JavaScript and CSS into content-hashed assets and references the existing logo file. The release homepage is about 3 KB; its metadata is still present without JavaScript. A high-resolution approved logo is also supplied as the apple-touch-icon/favicon.
-
-`standalone.html` keeps the complete embedded app. Demo fixture generators read that file. The build and tests enforce the hosted byte budget, bundle integrity and standalone preservation. Publish generated runtime assets alongside the homepage. Do not remove a previous runtime version while cached pages may still reference it. Already-generated Messages previews are client-controlled; actual rendering must still be checked on an iPhone.
-
-
-## Dedicated Messages share page
-
-Use `https://doglegclub.com/share/` for the public preview. It has its own matching canonical/og:url, a fresh image address, and the screenshot as a real visible HTML image. It requires no JavaScript, authentication or redirect to expose its metadata or photo. Open Dogleg enters the normal app. This isolates the preview from the homepage and its previous failed-preview identity; it is not proof of the remaining Messages failure cause. The user confirmed blue iMessage bubbles and that apple.com previews work in the same conversation. Native Messages still needs user verification.
+Tests check static metadata, the normal homepage identity, the JPEG dimensions, root/dist image parity, the hosted size budget and standalone preservation. The user reported blue iMessage messages showing a plain Dogleg URL while apple.com previews work. HTTP availability and third-party Open Graph validation do not establish that Messages renders a preview on that device. Do not label native Messages rendering verified without the user's confirmation.

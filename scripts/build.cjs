@@ -4,4 +4,6 @@ if(fs.existsSync('assets/social'))fs.cpSync('assets/social','dist/assets/social'
 
 require('./package-hosted.cjs')(html);
 
-require('./build-share-landing.cjs')();
+
+
+fs.copyFileSync('assets/social/dogleg-share-v1.jpg','og-image.jpg');fs.copyFileSync('og-image.jpg','dist/og-image.jpg');
