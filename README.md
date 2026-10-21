@@ -57,3 +57,6 @@ Link sharing: `docs/SHARING.md` explains the fictional demo account, editable pr
 
 
 Messages preview compatibility: the hosted homepage stays below Apple’s documented 1 MB main-resource limit. Always publish `index.html` together with `assets/runtime/`, the approved logo and social image. `standalone.html` retains embedded application images/fonts for portable use.
+
+
+Administration is activated independently at /admin/. See docs/ADMIN.md. The broader staged membership/Premium changes remain inactive.

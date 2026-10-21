@@ -80,3 +80,6 @@ Applewood Windham coverage (2026-10-21): Applewood Golf Links is absent from bul
 
 
 Friends and playing partners (2026-10-21): replaced friend-code UI with opt-in name discovery and accepted connections. Round entry supports accepted friends, previous partners and private named partners; stable IDs and optional V7 partner arrays preserve account isolation and old backups. Friends/Statistics show most common partner, rounds, courses, latest date and your 18-hole scoring average, with ties and unscored outings handled. The opt-in directory migration is applied; existing users remain hidden until enabling discovery. No partner names are added to social post payloads. Read-only production RLS/privilege/search checks and synthetic multi-user UI tests replace a production Auth-fixture test rejected by automatic approval review. See docs/PLAYING-PARTNERS.md.
+
+
+Independent administration (2026-10-21): /admin/ activation uses src/admin.js and supabase/admin-access.sql, with server-owned roles and private first-visit PIN enrollment. Only the exact user-confirmed owner account was promoted. This is separate from the staged club-access/membership restrictions; those remain inactive. See docs/ADMIN.md.
